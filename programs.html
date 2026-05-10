@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>프로그램 안내 — 심리상담연구소 내면의 지도</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f7f3ed;--cream2:#ede8df;--cream3:#e2dbd0;
+  --ink:#1a1612;--ink2:#2e2820;--ink3:#4a4035;
+  --gold:#9a7a38;--gold-lt:#c4a05a;--gold-dk:#6b5525;
+  --serif-en:'Cormorant Garamond',Georgia,serif;
+  --serif-kr:'Noto Serif KR',serif;
+  --sans-kr:'Noto Sans KR',sans-serif;
+}
+body{background:var(--cream);color:var(--ink2);font-family:var(--serif-kr);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 64px;transition:all .5s}
+nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding:16px 64px;border-bottom:1px solid rgba(154,122,56,.15)}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-mark{width:36px;height:36px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-top{font-family:var(--sans-kr);font-weight:300;font-size:9px;color:var(--ink3);letter-spacing:2.5px;margin-bottom:1px;opacity:.7}
+.logo-main{font-family:var(--serif-kr);font-weight:900;font-size:15px;color:var(--ink);letter-spacing:-.2px;line-height:1}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:var(--serif-kr);font-weight:300;font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .3s;opacity:.7}
+.nav-link:hover,.nav-link.active{color:var(--gold);opacity:1}
+.nav-cta{font-family:var(--serif-en);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:9px 22px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold)}
+.container{max-width:1040px;margin:0 auto;padding:0 64px}
+.sec-label{font-family:var(--serif-en);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block}
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(154,122,56,.25),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}.d5{transition-delay:.6s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+footer{background:var(--ink);padding:56px 0 36px;text-align:center}
+.ft-logo{font-family:var(--serif-kr);font-weight:300;font-size:9px;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:2px}
+.ft-name{font-family:var(--serif-kr);font-weight:900;font-size:19px;color:rgba(255,255,255,.75);letter-spacing:-.5px;margin-bottom:3px}
+.ft-en{font-family:var(--serif-en);font-style:italic;font-size:12px;color:var(--gold);letter-spacing:3px;margin-bottom:24px}
+.ft-links{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.ft-links a{font-family:var(--serif-kr);font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold-lt)}
+.ft-cta{display:inline-block;font-family:var(--serif-en);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.45);color:var(--gold-lt);padding:12px 30px;transition:all .3s;margin-bottom:32px}
+.ft-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ft-copy{font-family:var(--sans-kr);font-weight:300;font-size:10px;color:rgba(255,255,255,.12);letter-spacing:.5px}
+@media(max-width:860px){nav{padding:16px 20px}nav.scrolled{padding:10px 20px}.nav-right .nav-link{display:none}.container{padding:0 20px}}
+</style>
+<style>
+/* HERO */
+.page-hero{padding:160px 0 80px;background:var(--ink);position:relative;overflow:hidden}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 70% 40%,rgba(154,122,56,.1) 0%,transparent 65%)}
+.ph-kicker{font-family:var(--serif-en);font-size:10px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;opacity:0;animation:fadeUp 1s .1s forwards}
+.ph-title{font-family:var(--serif-kr);font-weight:900;font-size:clamp(36px,6vw,62px);color:#fff;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;opacity:0;animation:fadeUp 1s .3s forwards}
+.ph-body{font-size:14px;color:rgba(255,255,255,.4);line-height:2.4;max-width:520px;opacity:0;animation:fadeUp 1s .5s forwards}
+
+/* PROGRAM LIST */
+.prog-section{padding:80px 0;background:var(--cream)}
+.prog-row{display:grid;grid-template-columns:80px 1fr 160px;background:var(--cream);border-bottom:1px solid rgba(154,122,56,.12);transition:background .3s}
+.prog-row:first-child{border-top:1px solid rgba(154,122,56,.12)}
+.prog-row:hover{background:var(--cream2)}
+.prog-num-col{padding:36px 24px;border-right:1px solid rgba(154,122,56,.1);display:flex;flex-direction:column;justify-content:space-between}
+.prog-roman{font-family:var(--serif-en);font-size:36px;font-weight:300;color:var(--gold);opacity:.35;line-height:1}
+.prog-icon{font-size:18px;margin-top:8px}
+.prog-body{padding:36px 36px}
+.prog-type{font-family:var(--serif-en);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.75}
+.prog-title{font-family:var(--serif-kr);font-weight:600;font-size:19px;color:var(--ink);margin-bottom:4px;letter-spacing:-.3px}
+.prog-title-en{font-family:var(--serif-en);font-style:italic;font-size:13px;color:var(--gold-dk);margin-bottom:14px}
+.prog-desc{font-size:13px;color:var(--ink3);line-height:2;opacity:.8;max-width:480px}
+.prog-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ptag{font-family:var(--serif-kr);font-size:11px;color:var(--ink3);background:var(--cream2);padding:3px 10px;border-radius:2px;opacity:.8}
+.ptag.g{color:var(--gold-dk);background:rgba(154,122,56,.1);border:1px solid rgba(154,122,56,.25)}
+.prog-meta-col{padding:36px 24px;border-left:1px solid rgba(154,122,56,.1);display:flex;flex-direction:column;justify-content:center}
+.prog-meta{font-family:var(--serif-kr);font-weight:300;font-size:11.5px;color:var(--ink3);line-height:2.2;opacity:.7}
+.prog-meta strong{font-weight:600;color:var(--ink);display:block}
+
+/* ════ 100일 코칭 상세 ════ */
+.coaching-detail{background:var(--cream2);padding:80px 0 100px}
+.cd-header{margin-bottom:64px}
+.cd-header h2{font-family:var(--serif-kr);font-weight:900;font-size:clamp(26px,4vw,42px);color:var(--ink);letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px}
+.cd-header p{font-size:13.5px;color:var(--ink3);line-height:2.3;max-width:580px;opacity:.8}
+
+/* structure band */
+.cd-structure{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--cream3);margin-bottom:64px}
+.cd-box{background:var(--cream2);padding:28px 24px;text-align:center}
+.cd-box-num{font-family:var(--serif-en);font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.7}
+.cd-box-val{font-family:var(--serif-kr);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:4px}
+.cd-box-sub{font-size:11.5px;color:var(--ink3);opacity:.6;line-height:1.7}
+
+/* session flow */
+.cd-flow{display:flex;align-items:center;gap:0;margin-bottom:64px;background:var(--ink);overflow:hidden}
+.flow-step{flex:1;padding:24px 20px;text-align:center;position:relative}
+.flow-step+.flow-step::before{content:'→';position:absolute;left:-2px;top:50%;transform:translateY(-50%);font-family:var(--serif-en);color:var(--gold);opacity:.4;font-size:18px}
+.flow-num{font-family:var(--serif-en);font-size:9px;letter-spacing:2px;color:var(--gold);opacity:.6;margin-bottom:6px}
+.flow-label{font-family:var(--serif-kr);font-weight:600;font-size:12px;color:#fff;margin-bottom:4px}
+.flow-time{font-family:var(--serif-en);font-size:11px;color:rgba(255,255,255,.3);letter-spacing:1px}
+
+/* phase tabs */
+.phase-tabs{display:flex;gap:2px;margin-bottom:2px}
+.ptab{flex:1;padding:20px 18px;background:var(--cream3);border:none;cursor:pointer;text-align:left;transition:all .3s;border-bottom:2px solid transparent}
+.ptab:hover{background:var(--cream2)}
+.ptab.active{background:var(--cream);border-bottom-color:var(--gold)}
+.pt-num{font-family:var(--serif-en);font-size:20px;font-weight:300;color:var(--gold);opacity:.4;line-height:1;margin-bottom:4px}
+.ptab.active .pt-num{opacity:1}
+.pt-lbl{font-family:var(--serif-en);font-size:8px;letter-spacing:2px;color:var(--gold);opacity:.4;text-transform:uppercase;margin-bottom:3px}
+.ptab.active .pt-lbl{opacity:.8}
+.pt-title{font-family:var(--serif-kr);font-size:11.5px;color:var(--ink3);opacity:.5;line-height:1.5}
+.ptab.active .pt-title{opacity:.85;color:var(--ink)}
+.phase-panel{display:none;background:var(--cream)}
+.phase-panel.active{display:block}
+.srow{display:grid;grid-template-columns:64px 160px 1fr;padding:18px 32px;border-bottom:1px solid rgba(154,122,56,.08);align-items:start;transition:background .2s}
+.srow:hover{background:var(--cream2)}
+.srow:last-child{border-bottom:none}
+.s-num{font-family:var(--serif-en);font-size:15px;font-weight:300;color:var(--gold);opacity:.45;padding-top:2px}
+.s-theme{font-family:var(--serif-kr);font-weight:600;font-size:13px;color:var(--ink);padding-top:2px;padding-right:16px;line-height:1.65}
+.s-body{font-size:12.5px;color:var(--ink3);line-height:1.95;opacity:.8}
+.stag{display:inline-block;font-family:var(--serif-en);font-size:9px;letter-spacing:2px;color:var(--gold-dk);border:1px solid rgba(154,122,56,.4);padding:1px 6px;margin-right:5px;vertical-align:middle}
+
+/* other programs */
+.other-prog{padding:80px 0;background:var(--cream)}
+.op-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--cream3)}
+.op-card{background:var(--cream);padding:44px 36px;position:relative;overflow:hidden}
+.op-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.op-card:hover{background:var(--cream2)}
+.op-card:hover::after{transform:scaleX(1)}
+.op-num{font-family:var(--serif-en);font-size:56px;font-weight:300;color:var(--gold);opacity:.1;line-height:1;margin-bottom:20px}
+.op-type{font-family:var(--serif-en);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;opacity:.75}
+.op-title{font-family:var(--serif-kr);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:10px;letter-spacing:-.3px}
+.op-desc{font-size:12.5px;color:var(--ink3);line-height:2;opacity:.75}
+.op-meta{font-family:var(--serif-kr);font-size:11px;color:var(--gold-dk);margin-top:18px;opacity:.85}
+
+/* CTA */
+.cta-strip{padding:80px 0;text-align:center;background:var(--cream2)}
+.cta-q{font-family:var(--serif-en);font-style:italic;font-size:clamp(16px,2.3vw,22px);color:var(--ink);line-height:1.7;max-width:460px;margin:0 auto 36px;font-weight:300;opacity:.65}
+.btn-dark{display:inline-block;font-family:var(--serif-en);font-size:11px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--cream);padding:15px 40px;transition:all .3s}
+.btn-dark:hover{background:var(--gold)}
+
+@media(max-width:860px){
+  .prog-row{grid-template-columns:1fr}.prog-meta-col,.prog-num-col{display:none}
+  .cd-structure{grid-template-columns:1fr 1fr}.cd-flow{flex-direction:column}
+  .flow-step+.flow-step::before{content:'↓';left:50%;top:-2px;transform:translateX(-50%)}
+  .phase-tabs{flex-wrap:wrap}.srow{grid-template-columns:48px 1fr;}
+  .srow .s-body{grid-column:2}.op-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg class="logo-mark" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="16.5" stroke="#9a7a38" stroke-width="1" opacity=".4"/>
+      <path d="M18 4 A14 14 0 1 1 8 28" stroke="#9a7a38" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <circle cx="18" cy="18" r="3" fill="#9a7a38" opacity=".35"/>
+    </svg><div class="logo-text"><span class="logo-top">심리상담연구소</span><span class="logo-main">내면의 지도</span></div></a>
+  <div class="nav-right"><a href="philosophy.html" class="nav-link ">철학</a>
+<a href="programs.html" class="nav-link active">프로그램</a>
+<a href="about.html" class="nav-link ">연구소 소개</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">상담 신청</a></div>
+</nav>
+
+<section class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="container">
+    <div class="ph-kicker">Programs · 프로그램 안내</div>
+    <h1 class="ph-title">당신의 여정에 맞는<br>탐구의 문</h1>
+    <p class="ph-body">모든 프로그램에 호흡을 통한 몸과 마음 수련이 통합되어 있습니다. 몸의 문이 열릴 때 마음과 정신의 탐구가 더 깊어집니다.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROGRAM LIST -->
+<section class="prog-section">
+  <div class="container">
+    <div class="prog-row reveal">
+      <div class="prog-num-col"><div class="prog-roman">I</div><div class="prog-icon">🜁</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Signature · 대표 프로그램</div>
+        <div class="prog-title">100일 1:1 통합 코칭</div>
+        <div class="prog-title-en">100-Day Integrative Coaching</div>
+        <div class="prog-desc">오행 기질 분석 → 호흡 수련 → 그림자·원형 작업 → 내면 화두 → 심리상담 통합. 100일 동안 몸·마음·정신이 함께 개성화되는 가장 완전한 과정.</div>
+        <div class="prog-tags">
+          <span class="ptag">오행 기질 분석</span>
+          <span class="ptag g">호흡·행공 수련</span>
+          <span class="ptag">그림자 작업</span>
+          <span class="ptag">꿈 분석</span>
+          <span class="ptag">내면 탐구</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>100일 과정</strong>주 2회 / 50회기<br>회기당 50분<br>온·오프라인</div></div>
+    </div>
+    <div class="prog-row reveal d1">
+      <div class="prog-num-col"><div class="prog-roman">II</div><div class="prog-icon">☯</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Group · 소그룹 워크숍</div>
+        <div class="prog-title">본래 나의 모습 — 하루 집중 워크숍</div>
+        <div class="prog-title-en">Original Face · One-Day Intensive</div>
+        <div class="prog-desc">오전 호흡 행공으로 몸을 열고, 오후 내면 화두 탐구로 마음을 열어, 저녁 나눔에서 정신이 통합됩니다. 6~10인 소그룹.</div>
+        <div class="prog-tags">
+          <span class="ptag g">호흡 행공</span><span class="ptag">내면 화두</span><span class="ptag">그룹 나눔</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>1일 집중</strong>6~10인 소그룹<br>분기 1회 개설</div></div>
+    </div>
+    <div class="prog-row reveal d2">
+      <div class="prog-num-col"><div class="prog-roman">III</div><div class="prog-icon">◎</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Retreat · 리트릿</div>
+        <div class="prog-title">침묵과 통찰 — 리트릿</div>
+        <div class="prog-title-en">Silence &amp; Insight · Retreat</div>
+        <div class="prog-desc">새벽 정공(靜功)으로 하루를 열고, 낮에는 융 심리학과 내면 탐구, 저녁엔 1:1 기질 상담. 3박 4일 동안 몸·마음·정신이 함께 쉬며 깊어집니다.</div>
+        <div class="prog-tags">
+          <span class="ptag g">새벽 정공</span><span class="ptag">1:1 기질 상담</span><span class="ptag">침묵 수행</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>3박 4일</strong>소규모 8인<br>연 2회 개설</div></div>
+    </div>
+    <div class="prog-row reveal d3">
+      <div class="prog-num-col"><div class="prog-roman">IV</div><div class="prog-icon">♾</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Professional · 전문가 과정</div>
+        <div class="prog-title">전문가 통합 심화 교육</div>
+        <div class="prog-title-en">Practitioner Integration Training</div>
+        <div class="prog-desc">상담사, 코치, 명상 지도자를 위한 심화 과정. 호흡 수련 지도 기초부터 오행 기질·융·내면 탐구의 통합 적용까지 체계적으로 습득합니다.</div>
+        <div class="prog-tags">
+          <span class="ptag g">호흡 지도 기초</span><span class="ptag">심화 커리큘럼</span><span class="ptag">수료증 발급</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>6개월 심화</strong>상담사·코치 대상<br>오프라인 전용</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 100일 상세 -->
+<section class="coaching-detail">
+  <div class="container">
+    <div class="cd-header reveal">
+      <span class="sec-label">Program I · 상세 안내</span>
+      <h2>100일 1:1 통합 코칭<br>— 가장 완전한 여정</h2>
+      <p>100일은 한 사람이 진정으로 변화하는 데 필요한 최소한의 시간입니다. 주 2회, 50회기를 통해 몸이 열리고, 무의식이 드러나고, 삶이 재구성됩니다. 모든 회기는 호흡 수련으로 시작하여 몸이 준비된 상태에서 깊은 심리 작업이 이루어집니다.</p>
+    </div>
+
+    <!-- 구조 -->
+    <div class="cd-structure reveal">
+      <div class="cd-box">
+        <div class="cd-box-num">Duration</div>
+        <div class="cd-box-val">100일</div>
+        <div class="cd-box-sub">약 14주<br>집중 탐구 여정</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Sessions</div>
+        <div class="cd-box-val">주 2회</div>
+        <div class="cd-box-sub">총 50회기<br>회기당 50분</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Format</div>
+        <div class="cd-box-val">1:1</div>
+        <div class="cd-box-sub">온라인(Zoom)<br>또는 오프라인</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Structure</div>
+        <div class="cd-box-val">4 Phase</div>
+        <div class="cd-box-sub">지도 → 하강 →<br>치유 → 개성화</div>
+      </div>
+    </div>
+
+    <!-- 회기 흐름 -->
+    <div class="cd-flow reveal">
+      <div class="flow-step">
+        <div class="flow-num">Opening · 10min</div>
+        <div class="flow-label">호흡 수련</div>
+        <div class="flow-time">단전호흡 / 조식</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Grounding · 10min</div>
+        <div class="flow-label">도입 명상</div>
+        <div class="flow-time">몸 감각 알아차림</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Core Work · 25min</div>
+        <div class="flow-label">핵심 작업</div>
+        <div class="flow-time">심리 / 꿈 / 기질</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Integration · 5min</div>
+        <div class="flow-label">통합 과제</div>
+        <div class="flow-time">일상 적용 설계</div>
+      </div>
+    </div>
+
+    <!-- Phase tabs -->
+    <div class="phase-tabs reveal">
+      <button class="ptab active" onclick="switchPhase(0)">
+        <div class="pt-num">1</div><div class="pt-lbl">Phase 1 · 1~12회기</div>
+        <div class="pt-title">지도 그리기<br>나의 구조 파악</div>
+      </button>
+      <button class="ptab" onclick="switchPhase(1)">
+        <div class="pt-num">2</div><div class="pt-lbl">Phase 2 · 13~28회기</div>
+        <div class="pt-title">무의식으로의 하강<br>그림자와 원형</div>
+      </button>
+      <button class="ptab" onclick="switchPhase(2)">
+        <div class="pt-num">3</div><div class="pt-lbl">Phase 3 · 29~40회기</div>
+        <div class="pt-title">상처와 화해<br>치유와 재구성</div>
+      </button>
+      <button class="ptab" onclick="switchPhase(3)">
+        <div class="pt-num">4</div><div class="pt-lbl">Phase 4 · 41~50회기</div>
+        <div class="pt-title">개성화<br>나로 살기</div>
+      </button>
+    </div>
+
+    <div class="phase-panel active" id="ph0">
+      <div class="srow"><div class="s-num">1~2회</div><div class="s-theme">오행 기질 분석</div><div class="s-body">오행(五行) 구조로 타고난 기질 파악. 융의 심리 유형과 교차 해석. <span class="stag">호흡</span>오행 기질에 맞는 호흡법 소개</div></div>
+      <div class="srow"><div class="s-num">3~4회</div><div class="s-theme">조식(調息) 입문</div><div class="s-body"><span class="stag">호흡</span>단전호흡 기초 수련. 숨이 안정될 때 몸이 현재로 돌아오는 경험. 페르소나와 진짜 자아의 간극 탐색</div></div>
+      <div class="srow"><div class="s-num">5~6회</div><div class="s-theme">그림자 첫 만남</div><div class="s-body">반복되는 갈등 패턴으로 억압된 그림자 초기 탐색. <span class="stag">호흡</span>억압된 감정이 쌓이는 신체 부위 알아차리기</div></div>
+      <div class="srow"><div class="s-num">7~8회</div><div class="s-theme">페르소나 탐구</div><div class="s-body">사회적 가면 뒤의 진짜 얼굴 탐색. 나는 어떤 역할을 연기해왔는가? 몸의 긴장 패턴으로 확인</div></div>
+      <div class="srow"><div class="s-num">9~10회</div><div class="s-theme">행공(行功) 입문</div><div class="s-body"><span class="stag">호흡</span>행공 기초 동작. 몸의 기혈(氣血) 순환이 열릴 때 무의식이 움직임으로 표현되는 경험</div></div>
+      <div class="srow"><div class="s-num">11~12회</div><div class="s-theme">1단계 중간 통합</div><div class="s-body">기질 차트 초기 해석 재검토. <span class="stag">호흡</span>몸의 변화로 심리 변화를 확인하는 몸-마음 지도 작성. 2단계 준비</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph1">
+      <div class="srow"><div class="s-num">13~14회</div><div class="s-theme">꿈 작업 기초</div><div class="s-body">융의 꿈 분석 입문. <span class="stag">호흡</span>꿈에서 느낀 감각을 단전호흡으로 먼저 몸에서 찾기. 무의식의 몸 언어</div></div>
+      <div class="srow"><div class="s-num">15~16회</div><div class="s-theme">핵심 원형 탐구</div><div class="s-body">나를 지배하는 원형(영웅, 현자, 내면 아이 등) 파악. 각 원형이 몸의 어떤 자세와 긴장 패턴으로 나타나는지 탐구</div></div>
+      <div class="srow"><div class="s-num">17~18회</div><div class="s-theme">아니마 / 아니무스</div><div class="s-body">남성 안의 여성적 원형, 여성 안의 남성적 원형. 관계 속에서 이것이 어떻게 투사되는지 탐구</div></div>
+      <div class="srow"><div class="s-num">19~20회</div><div class="s-theme">능동적 상상</div><div class="s-body"><span class="stag">호흡</span>행공 직후 능동적 상상 실시. 몸이 열린 상태에서 무의식의 형상이 더 선명하게 떠오름</div></div>
+      <div class="srow"><div class="s-num">21~22회</div><div class="s-theme">내면 화두 1</div><div class="s-body"><span class="stag">호흡</span>조식 20분 후 내면 화두 입정. "태어나기 이전 나의 본래 모습은?" — 몸이 고요할 때 물음이 단전에서 열림</div></div>
+      <div class="srow"><div class="s-num">23~24회</div><div class="s-theme">콤플렉스 탐구</div><div class="s-body">반복적 감정 반응의 뿌리 탐색. <span class="stag">호흡</span>콤플렉스가 막힌 기(氣)로 몸에 어떻게 저장되는지 확인</div></div>
+      <div class="srow"><div class="s-num">25~26회</div><div class="s-theme">꿈 작업 심화</div><div class="s-body">반복되는 꿈 패턴과 상징 분석. 무의식이 전하는 메시지를 일상과 연결</div></div>
+      <div class="srow"><div class="s-num">27~28회</div><div class="s-theme">2단계 중간 통합</div><div class="s-body">무의식 탐구 흐름 정리. <span class="stag">호흡</span>정공(靜功) 30분 후 "지금 듣고 있는 자는 누구인가?" — 깊은 고요에서 물음이 열림</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph2">
+      <div class="srow"><div class="s-num">29~30회</div><div class="s-theme">내면 아이</div><div class="s-body">억압된 어린 자아와의 만남. <span class="stag">호흡</span>자발적 행공으로 내면 아이의 몸 기억 열기</div></div>
+      <div class="srow"><div class="s-num">31~32회</div><div class="s-theme">관계 패턴</div><div class="s-body">반복되는 관계 역동 분석. 투사와 전이를 삶에서 인식. 몸의 방어 자세가 관계 패턴과 어떻게 연결되는지</div></div>
+      <div class="srow"><div class="s-num">33~34회</div><div class="s-theme">가족 원형과 서사</div><div class="s-body">가족 역할과 전승된 상처 탐구. 부모로부터 받은 원형적 패턴이 지금의 삶에서 어떻게 작동하는지</div></div>
+      <div class="srow"><div class="s-num">35~36회</div><div class="s-theme">내면 화두 2</div><div class="s-body"><span class="stag">호흡</span>정공 30분 후 "지금 이 순간 나를 움직이는 것은 무엇인가?" — 더 깊은 고요에서 물음이 열림</div></div>
+      <div class="srow"><div class="s-num">37~38회</div><div class="s-theme">용서와 화해</div><div class="s-body">그림자를 에너지로 받아들이기. <span class="stag">호흡</span>대극의 통합이 몸에서 어떻게 느껴지는지 — 기의 균형으로 경험</div></div>
+      <div class="srow"><div class="s-num">39~40회</div><div class="s-theme">3단계 통합</div><div class="s-body">치유의 여정 정리. 오행 기질 차트 재해석. 남은 10회기를 위한 개성화 계획 수립</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph3">
+      <div class="srow"><div class="s-num">41~42회</div><div class="s-theme">자기(Self) 탐구</div><div class="s-body">융의 개성화 여정의 중심, 자기(Self). <span class="stag">호흡</span>단전(丹田)이 인체의 중심이듯, 자기는 심리의 중심 — 몸과 심리의 중심이 하나임을 경험</div></div>
+      <div class="srow"><div class="s-num">43~44회</div><div class="s-theme">삶의 신화</div><div class="s-body">나의 삶을 관통하는 이야기(Mythos) 재발견. 상처의 서사를 의미의 서사로 재구성</div></div>
+      <div class="srow"><div class="s-num">45~46회</div><div class="s-theme">오행 기질 재해석</div><div class="s-body">100일 후 오행 기질을 다시 읽다. <span class="stag">호흡</span>몸의 변화가 기질 이해에 어떤 새로운 빛을 비추는지 확인</div></div>
+      <div class="srow"><div class="s-num">47~48회</div><div class="s-theme">나로 사는 연습</div><div class="s-body">개성화된 삶의 구체적 실천. 관계, 일, 창조 안에서 진짜 자아를 살아내는 방법 설계</div></div>
+      <div class="srow"><div class="s-num">49~50회</div><div class="s-theme">통합 의례 & 마무리</div><div class="s-body"><span class="stag">호흡</span>마무리 행공 의례 → 100일의 여정 통합. 앞으로의 개인 수행 계획 설계. 몸·마음·정신이 함께하는 종료 의식</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OTHER PROGRAMS -->
+<section class="other-prog">
+  <div class="container">
+    <div style="margin-bottom:48px" class="reveal">
+      <span class="sec-label">Other Programs · 다른 프로그램</span>
+      <h2 style="font-family:var(--serif-kr);font-weight:900;font-size:clamp(22px,3vw,30px);color:var(--ink);letter-spacing:-1px">더 다양한 방식으로<br>여정을 시작할 수 있습니다</h2>
+    </div>
+    <div class="op-grid">
+      <div class="op-card reveal">
+        <div class="op-num">II</div>
+        <div class="op-type">Group Workshop</div>
+        <div class="op-title">본래 나의 모습<br>하루 집중 워크숍</div>
+        <div class="op-desc">오전 호흡 행공으로 몸을 열고, 오후 내면 화두 탐구로 마음을 열어, 저녁 나눔에서 정신이 통합됩니다. 6~10인 소그룹으로 진행되는 하루 집중 여정.</div>
+        <div class="op-meta">6~10인 · 1일 · 분기 1회</div>
+      </div>
+      <div class="op-card reveal d1">
+        <div class="op-num">III</div>
+        <div class="op-type">Silent Retreat</div>
+        <div class="op-title">침묵과 통찰<br>리트릿</div>
+        <div class="op-desc">새벽 정공으로 하루를 열고, 낮에는 융 심리학과 내면 탐구, 저녁엔 1:1 기질 상담. 자연 속 3박 4일 동안 몸·마음·정신이 함께 쉬며 깊어집니다.</div>
+        <div class="op-meta">8인 · 3박 4일 · 연 2회</div>
+      </div>
+      <div class="op-card reveal d2">
+        <div class="op-num">IV</div>
+        <div class="op-type">Professional Training</div>
+        <div class="op-title">전문가<br>통합 심화 교육</div>
+        <div class="op-desc">상담사, 코치, 명상 지도자를 위한 심화 과정. 호흡 수련 지도 기초부터 융·내면 탐구·오행 기질의 통합 적용까지 체계적으로 습득합니다.</div>
+        <div class="op-meta">전문가 대상 · 6개월 · 수료증 발급</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="cta-strip">
+  <div class="reveal">
+    <span class="sec-label" style="justify-content:center;display:flex">Apply</span>
+    <div class="cta-q">"100일의 여정을 시작할 준비가 되셨나요?"</div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="btn-dark">상담 신청하기</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo">심리상담연구소</div>
+  <div class="ft-name">내면의 지도</div>
+  <div class="ft-en">The Inner Map</div>
+  <div class="ft-links">
+    <a href="index.html">홈</a>
+    <a href="philosophy.html">철학</a>
+    <a href="programs.html">프로그램</a>
+    <a href="about.html">연구소 소개</a>
+    <a href="https://sites.google.com/view/innertrueself/faq" target="_blank" rel="noopener">FAQ</a>
+    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener">유튜브</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">상담 신청하기</a>
+  <div class="ft-copy">© 2025 심리상담연구소 내면의 지도 · All rights reserved.</div>
+</footer>
+<script>
+const _n=document.getElementById('nav');
+window.addEventListener('scroll',()=>_n.classList.toggle('scrolled',window.scrollY>50));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'}).observe(el);
+});
+</script>
+
+<script>
+function switchPhase(idx){
+  document.querySelectorAll('.ptab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.phase-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+}
+</script>
+</body>
+</html>

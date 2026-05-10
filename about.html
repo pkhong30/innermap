@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연구소장 홍승환 — 심리상담연구소 내면의 지도</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f7f3ed; --cream2:#ede8df; --cream3:#e2dbd0;
+  --ink:#1a1612;   --ink2:#2e2820;   --ink3:#4a4035;
+  --gold:#9a7a38;  --gold-lt:#c4a05a; --gold-dk:#6b5525;
+  --sage:#3a4a3f;
+  --serif-en:'Cormorant Garamond',Georgia,serif;
+  --serif-kr:'Noto Serif KR',serif;
+  --sans-kr:'Noto Sans KR',sans-serif;
+}
+body{background:var(--cream);color:var(--ink2);font-family:var(--serif-kr);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:28px 64px;transition:all .5s}
+nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding:18px 64px;border-bottom:1px solid rgba(154,122,56,.15)}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-mark{width:38px;height:38px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-top{font-family:var(--sans-kr);font-weight:300;font-size:9px;color:var(--ink3);letter-spacing:2.5px;margin-bottom:1px;opacity:.7}
+.logo-main{font-family:var(--serif-kr);font-weight:900;font-size:15px;color:var(--ink);letter-spacing:-.2px;line-height:1}
+.nav-right{display:flex;align-items:center;gap:32px}
+.nav-link{font-family:var(--serif-kr);font-weight:300;font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .3s;opacity:.7}
+.nav-link:hover,.nav-link.active{color:var(--gold);opacity:1}
+.nav-cta{font-family:var(--serif-en);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:9px 22px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold)}
+
+/* SHARED */
+.container{max-width:1040px;margin:0 auto;padding:0 64px}
+.sec-label{font-family:var(--serif-en);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block}
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(154,122,56,.25),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* FOOTER */
+footer{background:var(--ink);padding:60px 0 40px;text-align:center}
+.ft-logo{font-family:var(--serif-kr);font-weight:300;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:3px;margin-bottom:3px}
+.ft-name{font-family:var(--serif-kr);font-weight:900;font-size:20px;color:rgba(255,255,255,.8);letter-spacing:-.5px;margin-bottom:3px}
+.ft-en{font-family:var(--serif-en);font-style:italic;font-size:12px;color:var(--gold);letter-spacing:3px;margin-bottom:28px}
+.ft-links{display:flex;justify-content:center;gap:28px;margin-bottom:32px;flex-wrap:wrap}
+.ft-links a{font-family:var(--serif-kr);font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold-lt)}
+.ft-cta{display:inline-block;font-family:var(--serif-en);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.5);color:var(--gold-lt);padding:12px 32px;transition:all .3s;margin-bottom:36px}
+.ft-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ft-copy{font-family:var(--sans-kr);font-weight:300;font-size:10px;color:rgba(255,255,255,.15);letter-spacing:.5px}
+
+@media(max-width:860px){
+  nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
+  .nav-right .nav-link{display:none}
+  .container{padding:0 24px}
+}
+</style>
+<style>
+/* HERO */
+.about-hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink);position:relative;overflow:hidden;padding:0}
+.ah-texture{position:absolute;inset:0;background:linear-gradient(150deg,var(--ink2) 0%,var(--ink) 60%);opacity:1}
+.ah-gold{position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(154,122,56,.12) 0%,transparent 65%)}
+.ah-line{position:absolute;left:64px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(154,122,56,.3) 20%,rgba(154,122,56,.3) 80%,transparent)}
+.ah-content{position:relative;z-index:2;padding:160px 64px 80px;max-width:700px}
+.ah-kicker{font-family:var(--serif-en);font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp 1s .1s forwards}
+.ah-name-kr{font-family:var(--serif-kr);font-weight:900;font-size:clamp(52px,7vw,80px);color:#fff;letter-spacing:-3px;line-height:.95;margin-bottom:10px;opacity:0;animation:fadeUp 1s .3s forwards}
+.ah-name-en{font-family:var(--serif-en);font-style:italic;font-weight:300;font-size:clamp(15px,2vw,20px);color:var(--gold-lt);letter-spacing:5px;margin-bottom:28px;opacity:0;animation:fadeUp 1s .48s forwards}
+.ah-badges{display:flex;gap:8px;flex-wrap:wrap;opacity:0;animation:fadeUp 1s .63s forwards}
+.badge{font-family:var(--serif-kr);font-size:11px;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);padding:5px 14px;letter-spacing:.3px}
+.badge.gold{color:var(--gold-lt);border-color:rgba(154,122,56,.5)}
+
+/* BIO */
+.bio{padding:100px 0;background:var(--cream)}
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.bio-left h2{font-family:var(--serif-kr);font-weight:900;font-size:clamp(24px,3vw,32px);color:var(--ink);letter-spacing:-1px;line-height:1.25;margin-bottom:24px}
+.bio-left p{font-size:13.5px;color:var(--ink3);line-height:2.35;margin-bottom:16px;opacity:.8}
+.bio-left p:last-child{margin-bottom:0}
+
+/* edu timeline */
+.edu{display:flex;flex-direction:column;gap:0;border-left:1px solid rgba(154,122,56,.25);padding-left:28px;margin-top:8px}
+.edu-item{padding:18px 0;border-bottom:1px solid rgba(154,122,56,.1);position:relative}
+.edu-item::before{content:'';position:absolute;left:-33px;top:24px;width:8px;height:8px;border-radius:50%;background:var(--cream2);border:1.5px solid var(--gold)}
+.edu-school{font-family:var(--serif-en);font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;opacity:.8}
+.edu-detail{font-family:var(--serif-kr);font-size:13px;color:var(--ink3);line-height:1.7;opacity:.8}
+.edu-degree{font-weight:600;color:var(--ink)}
+
+/* keyword tags */
+.keyword-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.kw{font-family:var(--serif-kr);font-size:11.5px;color:var(--ink3);background:var(--cream2);padding:6px 14px;opacity:.8}
+
+/* YOUTUBE */
+.yt-section{padding:80px 0;background:var(--cream2)}
+.yt-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.yt-left h2{font-family:var(--serif-kr);font-weight:900;font-size:clamp(22px,3vw,30px);color:var(--ink);letter-spacing:-1px;margin-bottom:16px}
+.yt-left p{font-size:13.5px;color:var(--ink3);line-height:2.3;margin-bottom:28px;opacity:.8}
+.yt-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif-en);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:#c00;padding:12px 24px;text-decoration:none;transition:all .3s}
+.yt-btn:hover{background:#a00}
+.yt-card{background:var(--ink);padding:40px;position:relative;overflow:hidden}
+.yt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#c00,var(--gold-lt))}
+.yt-ch{font-family:var(--serif-en);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8}
+.yt-title{font-family:var(--serif-kr);font-weight:900;font-size:20px;color:#fff;letter-spacing:-.5px;line-height:1.35;margin-bottom:8px}
+.yt-sub{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:24px;font-family:var(--serif-kr)}
+.yt-topics{display:flex;flex-direction:column;gap:9px}
+.yt-t{font-family:var(--serif-kr);font-size:12.5px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:10px}
+.yt-t::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:.7;flex-shrink:0}
+
+/* CTA */
+.cta-strip{padding:100px 0;text-align:center;background:var(--cream)}
+.cta-quote{font-family:var(--serif-en);font-style:italic;font-size:clamp(17px,2.4vw,24px);color:var(--ink);line-height:1.7;max-width:500px;margin:0 auto 12px;font-weight:300;opacity:.7}
+.cta-attr{font-family:var(--sans-kr);font-weight:300;font-size:10px;color:var(--gold);letter-spacing:3px;margin-bottom:48px}
+.cta-btn{display:inline-block;font-family:var(--serif-en);font-size:11px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--cream);padding:16px 44px;font-weight:400;transition:all .3s}
+.cta-btn:hover{background:var(--gold)}
+
+@media(max-width:860px){
+  .ah-content{padding:140px 24px 64px}
+  .ah-line{left:24px}
+  .bio-grid{grid-template-columns:1fr}
+  .yt-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 38 38" fill="none">
+      <circle cx="19" cy="19" r="17.5" stroke="#9a7a38" stroke-width="1"/>
+      <path d="M19 4 A15 15 0 1 1 9 30" stroke="#9a7a38" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <circle cx="19" cy="19" r="3" fill="#9a7a38" opacity=".4"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-top">심리상담연구소</span>
+      <span class="logo-main">내면의 지도</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="about.html" class="nav-link active">연구소 소개</a>
+<a href="https://sites.google.com/view/innertrueself/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8" class="nav-link" target="_blank" rel="noopener">프로그램</a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">상담 신청</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="ah-texture"></div>
+  <div class="ah-gold"></div>
+  <div class="ah-line"></div>
+  <div class="ah-content">
+    <div class="ah-kicker">Director · 연구소장</div>
+    <h1 class="ah-name-kr">홍승환</h1>
+    <div class="ah-name-en">Hong Seung-hwan, Ph.D.</div>
+    <div class="ah-badges">
+      <span class="badge gold">Ph.D. 기독교상담심리학</span>
+      <span class="badge">목사</span>
+      <span class="badge">국선도 수사</span>
+      <span class="badge">특수교사 20년+</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BIO -->
+<section class="bio">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="reveal">
+        <span class="sec-label">Biography</span>
+        <h2>몸과 마음, 영성을<br>평생 화두로 삼아온 사람</h2>
+        <p>홍승환은 목사이자 국선도 수사다. 연세대학교를 시작으로 Boston University, National University, 서울기독대학교에 이르기까지 신학, 사회학, 철학, 비교종교학, 교육학을 두루 공부하며 몸과 마음, 영성의 문제를 평생 화두로 삼아왔다.</p>
+        <p>서울기독대학교에서 기독교상담심리학 박사(Ph.D.) 학위를 받았으며, 칼 융의 심리학과 기공 수련을 바탕으로 내면의 갈등과 치유에 관한 사유를 이어오고 있다.</p>
+        <p>현재 20년 넘게 미국 공립학교에서 특수교사로 일하고 있다. 가장 취약한 이들과 함께하는 현장의 감각이 그의 상담 철학에 깊이를 더한다.</p>
+        <div class="keyword-row">
+          <span class="kw">칼 융 심리학</span>
+          <span class="kw">비교종교학</span>
+          <span class="kw">기독교상담</span>
+          <span class="kw">기공 수련</span>
+          <span class="kw">영성과 치유</span>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <span class="sec-label">Education</span>
+        <div class="edu">
+          <div class="edu-item">
+            <div class="edu-school">Yonsei University</div>
+            <div class="edu-detail"><span class="edu-degree">연세대학교</span> — 신학</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-school">Boston University</div>
+            <div class="edu-detail"><span class="edu-degree">Boston University</span> — 사회학 · 철학</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-school">National University</div>
+            <div class="edu-detail"><span class="edu-degree">National University</span> — 비교종교학 · 교육학</div>
+          </div>
+          <div class="edu-item" style="border-bottom:none">
+            <div class="edu-school">서울기독대학교 Ph.D.</div>
+            <div class="edu-detail"><span class="edu-degree">기독교상담심리학 박사</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- YOUTUBE -->
+<section class="yt-section">
+  <div class="container">
+    <div class="yt-inner">
+      <div class="reveal">
+        <span class="sec-label">YouTube Channel</span>
+        <h2>마음과 영성의 향기</h2>
+        <p>칼 융 심리학, 기공 수련, 영성, 내면의 치유에 관한 생각들을 유튜브 채널을 통해 영상으로 나누고 있습니다. 책과 강의실 밖에서, 일상의 언어로 나누는 내면 탐구의 이야기.</p>
+        <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener" class="yt-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          채널 바로가기
+        </a>
+      </div>
+      <div class="reveal d2">
+        <div class="yt-card">
+          <div class="yt-ch">YouTube · 마음과 영성의 향기</div>
+          <div class="yt-title">내면의 목소리를<br>함께 듣습니다</div>
+          <div class="yt-sub">칼 융 · 기공 수련 · 영성 · 치유</div>
+          <div class="yt-topics">
+            <div class="yt-t">칼 융의 그림자와 원형 이야기</div>
+            <div class="yt-t">호흡과 몸을 통한 내면 수련</div>
+            <div class="yt-t">신학과 심리학의 만남</div>
+            <div class="yt-t">내면 치유와 개성화의 여정</div>
+            <div class="yt-t">오행 기질로 나를 이해하기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="reveal">
+    <div class="cta-quote">"몸이 열릴 때, 마음도 열립니다.<br>그리고 마음이 열릴 때, 영혼도 말을 겁니다."</div>
+    <div class="cta-attr">홍승환 Ph.D.</div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="cta-btn">상담 신청하기</a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="ft-logo">심리상담연구소</div>
+  <div class="ft-name">내면의 지도</div>
+  <div class="ft-en">The Inner Map</div>
+  <div class="ft-links">
+    <a href="index.html">홈</a>
+    <a href="about.html">연구소 소개</a>
+    <a href="https://sites.google.com/view/innertrueself/%EC%B2%A0%ED%95%99" target="_blank" rel="noopener">철학</a>
+    <a href="https://sites.google.com/view/innertrueself/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8" target="_blank" rel="noopener">프로그램</a>
+    <a href="https://sites.google.com/view/innertrueself/faq" target="_blank" rel="noopener">FAQ</a>
+    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener">유튜브</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">상담 신청하기</a>
+  <div class="ft-copy">© 2025 심리상담연구소 내면의 지도 · All rights reserved.</div>
+</footer>
+<script>
+const _n=document.getElementById('nav');
+window.addEventListener('scroll',()=>_n.classList.toggle('scrolled',window.scrollY>50));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08,rootMargin:'0px 0px -20px 0px'}).observe(el);
+});
+</script>
+</body>
+</html>
