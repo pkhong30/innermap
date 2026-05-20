@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Inner Map — Integrative Individuation</title>
+<meta property="og:title" content="The Inner Map — Integrative Individuation">
+<meta property="og:description" content="Where Jungian depth psychology meets Eastern breathwork and somatic practice. The deepest journey of coming to know yourself.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f7f3ed;--cream2:#ede8df;--cream3:#e2dbd0;
+  --ink:#1a1612;--ink2:#2e2820;--ink3:#4a4035;
+  --gold:#9a7a38;--gold-lt:#c4a05a;--gold-dk:#6b5525;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Noto Sans KR',sans-serif;
+}
+body{background:var(--cream);color:var(--ink2);font-family:var(--serif);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 64px;transition:all .5s}
+nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding:16px 64px;border-bottom:1px solid rgba(154,122,56,.15)}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-mark{width:36px;height:36px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-sub{font-family:var(--sans);font-weight:300;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:2.5px;margin-bottom:1px}
+.logo-main{font-family:var(--serif);font-weight:600;font-size:17px;color:#fff;letter-spacing:.5px;line-height:1}
+nav.scrolled .logo-sub{color:var(--ink3)}
+nav.scrolled .logo-main{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:var(--serif);font-weight:300;font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;letter-spacing:.3px;transition:color .3s}
+.nav-link:hover,.nav-link.active{color:var(--gold-lt)}
+nav.scrolled .nav-link{color:var(--ink3)}
+nav.scrolled .nav-link:hover,nav.scrolled .nav-link.active{color:var(--gold)}
+.nav-cta{font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink);background:var(--gold-lt);padding:9px 22px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold)}
+.lang-switch{font-family:var(--serif);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.2);padding:5px 12px;transition:all .3s;border-radius:2px}
+.lang-switch:hover{color:var(--gold-lt);border-color:rgba(154,122,56,.5)}
+nav.scrolled .lang-switch{color:var(--ink3);border-color:rgba(154,122,56,.3)}
+nav.scrolled .lang-switch:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.62)),url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;padding:0 8%;position:relative}
+.hero-inner{max-width:820px}
+.hero-kicker{font-family:var(--serif);font-size:10px;letter-spacing:7px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:22px;opacity:0;animation:fadeUp 1s .2s forwards}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,7vw,94px);line-height:1.04;letter-spacing:-2px;color:#fff;margin-bottom:28px;opacity:0;animation:fadeUp 1s .4s forwards}
+.hero p{font-family:var(--serif);font-size:16px;color:rgba(255,255,255,.6);max-width:580px;line-height:2.2;font-style:italic;opacity:0;animation:fadeUp 1s .6s forwards}
+.hero-cta{display:inline-block;margin-top:40px;padding:15px 36px;background:var(--gold);color:#fff;text-decoration:none;font-family:var(--serif);letter-spacing:4px;font-size:11px;text-transform:uppercase;transition:.3s;opacity:0;animation:fadeUp 1s .8s forwards}
+.hero-cta:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:10px;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase}
+
+/* LAYOUT */
+.container{max-width:1040px;margin:0 auto;padding:0 64px}
+.sec-label{font-family:var(--serif);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block}
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(154,122,56,.25),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* QUOTE */
+.quote-section{padding:110px 8%;text-align:center;background:var(--ink)}
+.quote-section blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(22px,3.2vw,40px);line-height:1.7;max-width:820px;margin:0 auto;color:rgba(255,255,255,.75)}
+.quote-section .q-attr{display:block;margin-top:28px;font-family:var(--serif);letter-spacing:4px;font-size:10px;text-transform:uppercase;color:var(--gold)}
+
+/* ABOUT INTRO */
+.about-sec{padding:110px 0;background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
+.about-text h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.5vw,42px);color:var(--ink);letter-spacing:-.5px;line-height:1.15;margin-bottom:20px}
+.about-text p{font-size:14px;color:var(--ink3);line-height:2.3;opacity:.85}
+.about-text p+p{margin-top:16px}
+.about-pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--cream3)}
+.pillar{background:var(--cream2);padding:28px 22px;text-align:center}
+.pillar-icon{font-size:22px;margin-bottom:10px}
+.pillar-en{font-family:var(--serif);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.75}
+.pillar-title{font-family:var(--serif);font-weight:500;font-size:14px;color:var(--ink);line-height:1.4}
+
+/* PROGRAMS PREVIEW */
+.programs-sec{padding:110px 0;background:var(--cream2)}
+.prog-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--cream3);margin-top:60px}
+.prog-card{background:var(--cream2);padding:44px 36px;position:relative;overflow:hidden;text-decoration:none;display:block;transition:background .3s}
+.prog-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.prog-card:hover{background:var(--cream)}
+.prog-card:hover::after{transform:scaleX(1)}
+.pc-num{font-family:var(--serif);font-size:54px;font-weight:300;color:var(--gold);opacity:.1;line-height:1;margin-bottom:18px}
+.pc-type{font-family:var(--serif);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.75}
+.pc-title{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.pc-desc{font-size:13px;color:var(--ink3);line-height:2;opacity:.75}
+.pc-meta{font-family:var(--serif);font-size:11px;color:var(--gold-dk);margin-top:16px;opacity:.85;font-style:italic}
+
+/* BREATHWORK SECTION */
+.breath-sec{padding:110px 0;background:var(--ink)}
+.breath-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.breath-text h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.5vw,42px);color:#fff;letter-spacing:-.5px;line-height:1.15;margin-bottom:20px}
+.breath-text p{font-size:14px;color:rgba(255,255,255,.45);line-height:2.3;font-style:italic}
+.breath-list{display:flex;flex-direction:column;gap:2px}
+.breath-item{background:#211d18;padding:24px 28px;display:flex;gap:20px;align-items:flex-start}
+.bi-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.bi-title{font-family:var(--serif);font-weight:500;font-size:14px;color:#fff;margin-bottom:4px}
+.bi-desc{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.9;font-style:italic}
+
+/* FINAL CTA */
+.final-cta{padding:130px 8%;text-align:center;background:var(--cream2)}
+.final-cta h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,60px);line-height:1.1;letter-spacing:-.5px;color:var(--ink);margin-bottom:22px}
+.final-cta p{max-width:580px;margin:0 auto;font-size:14px;line-height:2.3;color:var(--ink3);opacity:.75;font-style:italic}
+.btn-dark{display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--cream);padding:15px 42px;transition:all .3s;margin-top:40px}
+.btn-dark:hover{background:var(--gold)}
+.btn-outline{display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.5);color:var(--gold-dk);padding:13px 32px;transition:all .3s;margin-top:40px;margin-left:16px}
+.btn-outline:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:60px 0 36px;text-align:center}
+.ft-sub{font-family:var(--sans);font-weight:300;font-size:9px;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:4px}
+.ft-name{font-family:var(--serif);font-weight:600;font-size:22px;color:rgba(255,255,255,.75);letter-spacing:.5px;margin-bottom:3px}
+.ft-kr{font-family:'Noto Sans KR',sans-serif;font-weight:300;font-size:11px;color:var(--gold);letter-spacing:3px;margin-bottom:24px;opacity:.5}
+.ft-links{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.ft-links a{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold-lt)}
+.ft-cta{display:inline-block;font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.45);color:var(--gold-lt);padding:12px 30px;transition:all .3s;margin-bottom:32px}
+.ft-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ft-copy{font-family:var(--sans);font-weight:300;font-size:10px;color:rgba(255,255,255,.12);letter-spacing:.5px}
+
+@media(max-width:860px){
+  nav{padding:16px 20px}nav.scrolled{padding:12px 20px}.nav-right .nav-link{display:none}
+  .container{padding:0 20px}
+  .about-grid,.breath-grid{grid-template-columns:1fr}
+  .about-pillars,.prog-cards{grid-template-columns:1fr}
+  .hero{padding:140px 7% 80px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="en-index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="16.5" stroke="#9a7a38" stroke-width="1" opacity=".5"/>
+      <path d="M18 4 A14 14 0 1 1 8 28" stroke="#9a7a38" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <circle cx="18" cy="18" r="3" fill="#9a7a38" opacity=".4"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-sub">Psychological Counselling Institute</span>
+      <span class="logo-main">The Inner Map</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="en-about.html" class="nav-link">About</a>
+    <a href="en-philosophy.html" class="nav-link">Philosophy</a>
+    <a href="programs-en.html" class="nav-link">Programs</a>
+    <a href="index.html" class="lang-switch">한국어</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">Apply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Psychological Counselling Institute · Seoul</div>
+    <h1>The Inner<br>Map</h1>
+    <p>Where Jungian depth psychology meets Eastern breathwork and somatic practice. The deepest journey of coming to know yourself.</p>
+    <a class="hero-cta" href="programs-en.html">Explore Programs</a>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="reveal">
+    <blockquote>
+      "When the body opens,<br>the mind opens too."
+    </blockquote>
+    <span class="q-attr">The Inner Map</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT INTRO -->
+<section class="about-sec">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-label">About · The Inner Map</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>Six streams of wisdom flowing toward one source</h2>
+        <p>The Inner Map is a psychological counselling institute that brings together six distinct traditions — Jungian analytical psychology, Eastern contemplative inquiry, meditation, depth psychotherapy, Five-Element temperament analysis, and breathwork-based somatic practice.</p>
+        <p>Each tradition speaks a different language. Each, within The Inner Map, speaks to the same fundamental question: how to live as a whole and integrated human being — body, mind, and psyche moving as one.</p>
+        <a href="en-philosophy.html" style="display:inline-block;margin-top:28px;font-family:var(--serif);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk);text-decoration:none;border-bottom:1px solid rgba(154,122,56,.35);padding-bottom:3px">Read our Philosophy →</a>
+      </div>
+      <div class="reveal d1">
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🜁</div>
+            <div class="pillar-en">Jung</div>
+            <div class="pillar-title">Analytical<br>Psychology</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">☯</div>
+            <div class="pillar-en">East</div>
+            <div class="pillar-title">Contemplative<br>Inquiry</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">◎</div>
+            <div class="pillar-en">Practice</div>
+            <div class="pillar-title">Meditation &amp;<br>Mindfulness</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">♾</div>
+            <div class="pillar-en">Therapy</div>
+            <div class="pillar-title">Depth<br>Psychotherapy</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌙</div>
+            <div class="pillar-en">Elements</div>
+            <div class="pillar-title">Five-Element<br>Temperament</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌬</div>
+            <div class="pillar-en">Body</div>
+            <div class="pillar-title">Breathwork &amp;<br>Somatic Practice</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROGRAMS PREVIEW -->
+<section class="programs-sec">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-label">Programs · Choose Your Path</span>
+      <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,46px);color:var(--ink);letter-spacing:-.5px;line-height:1.1;margin-top:4px">A doorway suited<br>to your journey</h2>
+    </div>
+    <div class="prog-cards">
+      <a href="programs-en.html#beginner" class="prog-card reveal">
+        <div class="pc-num">I</div>
+        <div class="pc-type">Introductory</div>
+        <div class="pc-title">10-Session Beginner Coaching</div>
+        <div class="pc-desc">Five weeks of breathwork, Five-Element temperament mapping, and an initial encounter with the shadow. The first door inward.</div>
+        <div class="pc-meta">5 weeks · 10 sessions · 1:1</div>
+      </a>
+      <a href="programs-en.html" class="prog-card reveal d1">
+        <div class="pc-num">II</div>
+        <div class="pc-type">Signature</div>
+        <div class="pc-title">100-Day Integrative Coaching</div>
+        <div class="pc-desc">The complete individuation journey — body, psyche, and spirit deepening together over 100 days, 50 sessions.</div>
+        <div class="pc-meta">100 days · 50 sessions · 1:1</div>
+      </a>
+      <a href="programs-en.html" class="prog-card reveal d2">
+        <div class="pc-num">III–V</div>
+        <div class="pc-type">Other Formats</div>
+        <div class="pc-title">Workshops, Retreats &amp; Training</div>
+        <div class="pc-desc">One-day intensives, silent retreats, and a six-month professional training for counsellors and coaches.</div>
+        <div class="pc-meta">Various formats</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BREATHWORK -->
+<section class="breath-sec">
+  <div class="container">
+    <div class="breath-grid">
+      <div class="breath-text reveal">
+        <span class="sec-label" style="color:var(--gold-lt)">Why Breathwork Comes First</span>
+        <h2>Deep inquiry cannot happen in a closed body</h2>
+        <p>When the body is tense, even the most careful psychological work stays at the surface. When breathwork opens the body first, Jungian shadow work and inner inquiry descend from the head into the whole body. In that moment the analysing ego steps aside — and genuine change begins.</p>
+      </div>
+      <div class="breath-list reveal d1">
+        <div class="breath-item">
+          <div class="bi-icon">🌬</div>
+          <div>
+            <div class="bi-title">Breath Regulation × Inner Inquiry</div>
+            <div class="bi-desc">When the analytical mind settles into the dan-tian, the question opens through the whole body rather than through the head alone.</div>
+          </div>
+        </div>
+        <div class="breath-item">
+          <div class="bi-icon">🜁</div>
+          <div>
+            <div class="bi-title">Movement Practice × Shadow Work</div>
+            <div class="bi-desc">Suppressed emotion accumulates in the body. When it is released through movement, psychological work deepens.</div>
+          </div>
+        </div>
+        <div class="breath-item">
+          <div class="bi-icon">◎</div>
+          <div>
+            <div class="bi-title">Still Practice × Active Imagination</div>
+            <div class="bi-desc">Immediately after the body becomes quiet, inner images arise with far greater clarity and vividness.</div>
+          </div>
+        </div>
+        <div class="breath-item">
+          <div class="bi-icon">🌙</div>
+          <div>
+            <div class="bi-title">Five Elements × Temperament</div>
+            <div class="bi-desc">Somatic practice transforms Five-Element temperament from an abstract concept into a living, felt experience.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="reveal">
+    <span class="sec-label" style="display:flex;justify-content:center">Begin Your Journey</span>
+    <h2>Where would you<br>like to start?</h2>
+    <p>Whether you are new to inner work or returning to go deeper — there is a path here for you.</p>
+    <a href="programs-en.html" class="btn-dark">View All Programs</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="btn-outline">Apply Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-sub">Psychological Counselling Institute</div>
+  <div class="ft-name">The Inner Map</div>
+  <div class="ft-kr">내면의 지도</div>
+  <div class="ft-links">
+    <a href="en-index.html">Home</a>
+    <a href="en-philosophy.html">Philosophy</a>
+    <a href="programs-en.html">Programs</a>
+    <a href="en-about.html">About</a>
+    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">Apply Now</a>
+  <div class="ft-copy">© 2025 The Inner Map · Integrative Individuation · All rights reserved.</div>
+</footer>
+
+<script>
+const _n=document.getElementById('nav');
+window.addEventListener('scroll',()=>_n.classList.toggle('scrolled',window.scrollY>60));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'}).observe(el);
+});
+</script>
+</body>
+</html>

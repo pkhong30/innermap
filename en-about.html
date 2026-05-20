@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — The Inner Map · Hong Seung-hwan, Ph.D.</title>
+<meta property="og:title" content="About — The Inner Map">
+<meta property="og:description" content="Ph.D. in Christian Counselling Psychology. Minister. Kuksundo practitioner. A lifetime dedicated to the integration of body, mind, and spirit.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f7f3ed;--cream2:#ede8df;--cream3:#e2dbd0;
+  --ink:#1a1612;--ink2:#2e2820;--ink3:#4a4035;
+  --gold:#9a7a38;--gold-lt:#c4a05a;--gold-dk:#6b5525;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Noto Sans KR',sans-serif;
+}
+body{background:var(--cream);color:var(--ink2);font-family:var(--serif);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 64px;transition:all .5s}
+nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding:16px 64px;border-bottom:1px solid rgba(154,122,56,.15)}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-mark{width:36px;height:36px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-sub{font-family:var(--sans);font-weight:300;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:2.5px;margin-bottom:1px}
+.logo-main{font-family:var(--serif);font-weight:600;font-size:17px;color:#fff;letter-spacing:.5px;line-height:1}
+nav.scrolled .logo-sub{color:var(--ink3)}
+nav.scrolled .logo-main{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:var(--serif);font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;letter-spacing:.3px;transition:color .3s}
+.nav-link:hover,.nav-link.active{color:var(--gold-lt)}
+nav.scrolled .nav-link{color:var(--ink3)}
+nav.scrolled .nav-link:hover,nav.scrolled .nav-link.active{color:var(--gold)}
+.nav-cta{font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink);background:var(--gold-lt);padding:9px 22px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold)}
+.lang-switch{font-family:var(--serif);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.2);padding:5px 12px;transition:all .3s;border-radius:2px}
+.lang-switch:hover{color:var(--gold-lt);border-color:rgba(154,122,56,.5)}
+nav.scrolled .lang-switch{color:var(--ink3);border-color:rgba(154,122,56,.3)}
+nav.scrolled .lang-switch:hover{color:var(--gold);border-color:var(--gold)}
+.container{max-width:1040px;margin:0 auto;padding:0 64px}
+.sec-label{font-family:var(--serif);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block}
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(154,122,56,.25),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.page-hero{padding:160px 0 90px;background:var(--ink);position:relative;overflow:hidden}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 70% 40%,rgba(154,122,56,.1) 0%,transparent 65%)}
+.ph-kicker{font-family:var(--serif);font-size:10px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;opacity:0;animation:fadeUp 1s .1s forwards}
+.ph-title{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,76px);color:#fff;letter-spacing:-.5px;line-height:1.05;margin-bottom:10px;opacity:0;animation:fadeUp 1s .3s forwards}
+.ph-title-kr{font-family:var(--sans);font-weight:300;font-size:14px;color:rgba(255,255,255,.3);letter-spacing:4px;margin-bottom:22px;opacity:0;animation:fadeUp 1s .45s forwards}
+.ph-tags{display:flex;flex-wrap:wrap;gap:10px;opacity:0;animation:fadeUp 1s .6s forwards}
+.ph-tag{font-family:var(--serif);font-size:10px;letter-spacing:2px;color:var(--gold-lt);border:1px solid rgba(154,122,56,.35);padding:4px 12px}
+
+/* PORTRAIT SECTION */
+.portrait-sec{padding:100px 0;background:var(--cream)}
+.portrait-grid{display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:start}
+.portrait-img{width:100%;aspect-ratio:3/4;background:var(--cream3);overflow:hidden;position:relative}
+.portrait-img img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.portrait-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:40px;color:var(--gold);opacity:.2}
+.portrait-text{}
+.portrait-text h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3vw,38px);color:var(--ink);letter-spacing:-.4px;line-height:1.15;margin-bottom:20px}
+.portrait-text p{font-size:14px;color:var(--ink3);line-height:2.3;opacity:.85}
+.portrait-text p+p{margin-top:16px}
+
+/* CREDENTIALS */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(154,122,56,.08);margin-top:40px}
+.cred-box{background:var(--cream);padding:28px 32px}
+.cred-icon{font-size:20px;margin-bottom:10px}
+.cred-label{font-family:var(--serif);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.75}
+.cred-title{font-family:var(--serif);font-weight:500;font-size:15px;color:var(--ink);line-height:1.5}
+
+/* PATH SECTION */
+.path-sec{padding:100px 0;background:var(--ink)}
+.path-title{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.5vw,44px);color:#fff;letter-spacing:-.4px;line-height:1.1;margin-bottom:14px}
+.path-sub{font-size:14px;color:rgba(255,255,255,.42);line-height:2.2;max-width:580px;font-style:italic;margin-bottom:60px}
+.path-timeline{position:relative}
+.path-timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(154,122,56,.5),transparent)}
+.path-item{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.path-item:last-child{border-bottom:none}
+.path-dot{display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:1;padding-top:4px}
+.path-circle{width:14px;height:14px;border-radius:50%;background:var(--ink);border:1px solid rgba(154,122,56,.5);flex-shrink:0}
+.path-year{font-family:var(--serif);font-size:10px;color:var(--gold);opacity:.45;letter-spacing:1px}
+.path-content{}
+.path-tag{display:inline-block;font-family:var(--serif);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dk);border:1px solid rgba(154,122,56,.35);padding:1px 7px;margin-bottom:8px}
+.path-h{font-family:var(--serif);font-weight:500;font-size:16px;color:#fff;margin-bottom:5px}
+.path-p{font-size:13px;color:rgba(255,255,255,.42);line-height:2}
+
+/* QUOTE */
+.quote-band{background:var(--cream3);padding:100px 8%;text-align:center}
+.quote-band blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(20px,2.8vw,34px);line-height:1.75;max-width:800px;margin:0 auto;color:var(--ink)}
+.quote-band .q-attr{display:block;margin-top:26px;font-family:var(--serif);letter-spacing:4px;font-size:10px;text-transform:uppercase;color:var(--gold)}
+
+/* CTA */
+.cta-strip{padding:80px 8%;text-align:center;background:var(--cream2)}
+.btn-dark{display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--cream);padding:15px 40px;transition:all .3s;margin:8px}
+.btn-dark:hover{background:var(--gold)}
+.btn-outline{display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.5);color:var(--gold-dk);padding:13px 32px;transition:all .3s;margin:8px}
+.btn-outline:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:56px 0 36px;text-align:center}
+.ft-sub{font-family:var(--sans);font-weight:300;font-size:9px;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:2px}
+.ft-name{font-family:var(--serif);font-weight:600;font-size:22px;color:rgba(255,255,255,.75);margin-bottom:3px}
+.ft-kr{font-family:var(--sans);font-weight:300;font-size:11px;color:var(--gold);letter-spacing:3px;margin-bottom:24px;opacity:.5}
+.ft-links{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.ft-links a{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold-lt)}
+.ft-cta{display:inline-block;font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.45);color:var(--gold-lt);padding:12px 30px;transition:all .3s;margin-bottom:32px}
+.ft-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ft-copy{font-family:var(--sans);font-weight:300;font-size:10px;color:rgba(255,255,255,.12);letter-spacing:.5px}
+
+@media(max-width:860px){
+  nav{padding:16px 20px}nav.scrolled{padding:12px 20px}.nav-right .nav-link{display:none}
+  .container{padding:0 20px}
+  .portrait-grid{grid-template-columns:1fr}
+  .portrait-img{aspect-ratio:4/3}
+  .cred-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="en-index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="16.5" stroke="#9a7a38" stroke-width="1" opacity=".5"/>
+      <path d="M18 4 A14 14 0 1 1 8 28" stroke="#9a7a38" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <circle cx="18" cy="18" r="3" fill="#9a7a38" opacity=".4"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-sub">Psychological Counselling Institute</span>
+      <span class="logo-main">The Inner Map</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="en-about.html" class="nav-link active">About</a>
+    <a href="en-philosophy.html" class="nav-link">Philosophy</a>
+    <a href="programs-en.html" class="nav-link">Programs</a>
+    <a href="about.html" class="lang-switch">한국어</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">Apply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="container">
+    <div class="ph-kicker">Director · The Inner Map</div>
+    <h1 class="ph-title">Hong Seung-hwan, Ph.D.</h1>
+    <div class="ph-title-kr">홍승환</div>
+    <div class="ph-tags">
+      <span class="ph-tag">Ph.D. Counselling Psychology</span>
+      <span class="ph-tag">Minister</span>
+      <span class="ph-tag">Kuksundo Practitioner</span>
+      <span class="ph-tag">Special Education Teacher — 20+ years</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PORTRAIT & BIO -->
+<section class="portrait-sec">
+  <div class="container">
+    <div class="portrait-grid">
+      <div class="reveal">
+        <div class="portrait-img">
+          <img src="https://pkhong30.github.io/innermap/about-photo.jpg"
+               alt="Hong Seung-hwan, Ph.D."
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="portrait-img-placeholder" style="display:none">☯</div>
+        </div>
+        <div class="cred-grid" style="margin-top:2px">
+          <div class="cred-box">
+            <div class="cred-icon">🜁</div>
+            <div class="cred-label">Education</div>
+            <div class="cred-title">Ph.D. Christian Counselling Psychology</div>
+          </div>
+          <div class="cred-box">
+            <div class="cred-icon">☯</div>
+            <div class="cred-label">Ordination</div>
+            <div class="cred-title">Minister of Religion</div>
+          </div>
+          <div class="cred-box">
+            <div class="cred-icon">🌬</div>
+            <div class="cred-label">Somatic Practice</div>
+            <div class="cred-title">Kuksundo Practitioner (國仙道 修士)</div>
+          </div>
+          <div class="cred-box">
+            <div class="cred-icon">♾</div>
+            <div class="cred-label">Experience</div>
+            <div class="cred-title">Special Education Teacher — 20+ years</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portrait-text reveal d1">
+        <span class="sec-label">Director · About</span>
+        <h2>A minister, a practitioner, and a walker of many paths</h2>
+        <p>Hong Seung-hwan, Ph.D., has spent a lifetime holding a question that most traditions answer only in part: how do the body, the mind, and the spirit come to live as one?</p>
+        <p>Trained in Christian counselling psychology, ordained as a minister, and certified as a Kuksundo practitioner — a Korean Taoist somatic tradition — Dr Hong has spent over two decades working with people in the particular vulnerability of special education, where the gap between inner experience and outward expression is most acutely felt.</p>
+        <p>What became clear over those years is that psychological insight alone is not sufficient. Insight that remains in the head rarely reaches the body — and it is in the body that the deepest patterns are held and the deepest change becomes possible.</p>
+        <p>The Inner Map was founded as an answer to that realisation: a practice that brings together Jungian depth psychology, Eastern contemplative inquiry, meditation, depth psychotherapy, Five-Element temperament analysis, and breathwork-based somatic practice — each tradition illuminating what the others leave in shadow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PATH / TIMELINE -->
+<section class="path-sec">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-label" style="color:var(--gold-lt)">The Journey</span>
+      <div class="path-title">A life's worth<br>of integration</div>
+      <p class="path-sub">Each training was a door into a dimension the previous one had not fully opened. Together, they became the architecture of The Inner Map.</p>
+    </div>
+    <div class="path-timeline reveal">
+
+      <div class="path-item">
+        <div class="path-dot"><div class="path-circle"></div><div class="path-year">I</div></div>
+        <div class="path-content">
+          <div class="path-tag">Theology</div>
+          <div class="path-h">Ordination & Ministry</div>
+          <div class="path-p">Beginning with questions of meaning, transcendence, and the human spirit. Ordained as a minister and working pastorally with individuals and communities navigating major life transitions.</div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-dot"><div class="path-circle"></div><div class="path-year">II</div></div>
+        <div class="path-content">
+          <div class="path-tag">Somatic Practice</div>
+          <div class="path-h">Kuksundo — Korean Taoist Breathwork</div>
+          <div class="path-p">Training in Kuksundo (國仙道), a Korean Taoist tradition integrating dan-tian breathing, movement practice (行功), and still practice (靜功). The discovery that the body is not merely the container of experience — it is the site of transformation.</div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-dot"><div class="path-circle"></div><div class="path-year">III</div></div>
+        <div class="path-content">
+          <div class="path-tag">Academic</div>
+          <div class="path-h">Ph.D. — Christian Counselling Psychology</div>
+          <div class="path-p">Doctoral training in counselling psychology, deepening the theoretical foundation for understanding psychological suffering, relational dynamics, and the conditions under which change becomes possible.</div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-dot"><div class="path-circle"></div><div class="path-year">IV</div></div>
+        <div class="path-content">
+          <div class="path-tag">Practice</div>
+          <div class="path-h">20+ Years in Special Education</div>
+          <div class="path-p">Over two decades working as a special education teacher — a context in which the ordinary assumptions of psychological practice are consistently challenged, and where the connection between body, emotion, and learning is unmistakably clear.</div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-dot"><div class="path-circle"></div><div class="path-year">V</div></div>
+        <div class="path-content">
+          <div class="path-tag">Integration</div>
+          <div class="path-h">Founding of The Inner Map</div>
+          <div class="path-p">The convergence of all previous paths. Jungian depth psychology, Eastern contemplative inquiry, Five-Element temperament analysis, and breathwork-based somatic practice integrated into a single coherent approach to individuation — the journey of becoming, fully, who you already are.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<section class="quote-band">
+  <div class="reveal">
+    <blockquote>
+      "Body, mind, and spirit are not three separate problems to be solved.<br>They are one movement — and when they move together, that is wholeness."
+    </blockquote>
+    <span class="q-attr">Hong Seung-hwan, Ph.D. · The Inner Map</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="reveal">
+    <span class="sec-label" style="display:flex;justify-content:center">Begin</span>
+    <div style="font-family:var(--serif);font-style:italic;font-size:clamp(16px,2.3vw,22px);color:var(--ink3);line-height:1.7;max-width:440px;margin:0 auto 32px;opacity:.7">"The journey of the Inner Map begins wherever you are."</div>
+    <a href="programs-en.html" class="btn-dark">View Programs</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="btn-outline">Apply Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-sub">Psychological Counselling Institute</div>
+  <div class="ft-name">The Inner Map</div>
+  <div class="ft-kr">내면의 지도</div>
+  <div class="ft-links">
+    <a href="en-index.html">Home</a>
+    <a href="en-philosophy.html">Philosophy</a>
+    <a href="programs-en.html">Programs</a>
+    <a href="en-about.html">About</a>
+    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">Apply Now</a>
+  <div class="ft-copy">© 2025 The Inner Map · Integrative Individuation · All rights reserved.</div>
+</footer>
+
+<script>
+const _n=document.getElementById('nav');
+window.addEventListener('scroll',()=>_n.classList.toggle('scrolled',window.scrollY>60));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'}).observe(el);
+});
+</script>
+</body>
+</html>

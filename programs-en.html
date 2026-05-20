@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Programs — The Inner Map · Integrative Individuation</title>
+<meta property="og:title" content="Programs — The Inner Map">
+<meta property="og:description" content="1:1 coaching, small-group workshops, silent retreats, and professional training. Find the path that fits your journey.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f7f3ed;--cream2:#ede8df;--cream3:#e2dbd0;
+  --ink:#1a1612;--ink2:#2e2820;--ink3:#4a4035;
+  --gold:#9a7a38;--gold-lt:#c4a05a;--gold-dk:#6b5525;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Noto Sans KR',sans-serif;
+}
+body{background:var(--cream);color:var(--ink2);font-family:var(--serif);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 64px;transition:all .5s}
+nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding:16px 64px;border-bottom:1px solid rgba(154,122,56,.15)}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-mark{width:36px;height:36px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-top{font-family:var(--sans);font-weight:300;font-size:9px;color:var(--ink3);letter-spacing:2.5px;margin-bottom:1px;opacity:.7}
+.logo-main{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);letter-spacing:.5px;line-height:1}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:var(--serif);font-weight:300;font-size:14px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .3s;opacity:.7}
+.nav-link:hover,.nav-link.active{color:var(--gold);opacity:1}
+.nav-cta{font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:9px 22px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold)}
+.lang-switch{font-family:var(--serif);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid rgba(154,122,56,.3);padding:5px 12px;transition:all .3s;border-radius:2px}
+.lang-switch:hover{color:var(--gold);border-color:var(--gold)}
+
+/* LAYOUT */
+.container{max-width:1040px;margin:0 auto;padding:0 64px}
+.sec-label{font-family:var(--serif);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block}
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(154,122,56,.25),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.page-hero{padding:160px 0 90px;background:var(--ink);position:relative;overflow:hidden}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 70% 40%,rgba(154,122,56,.1) 0%,transparent 65%)}
+.ph-kicker{font-family:var(--serif);font-size:10px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;opacity:0;animation:fadeUp 1s .1s forwards}
+.ph-title{font-family:var(--serif);font-weight:600;font-size:clamp(38px,6vw,72px);color:#fff;letter-spacing:-1px;line-height:1.05;margin-bottom:22px;opacity:0;animation:fadeUp 1s .3s forwards}
+.ph-body{font-size:15px;color:rgba(255,255,255,.42);line-height:2.3;max-width:540px;opacity:0;animation:fadeUp 1s .5s forwards;font-style:italic}
+
+/* PROGRAM LIST */
+.prog-section{padding:80px 0;background:var(--cream)}
+.prog-row{display:grid;grid-template-columns:80px 1fr 180px;background:var(--cream);border-bottom:1px solid rgba(154,122,56,.12);transition:background .3s}
+.prog-row:first-child{border-top:1px solid rgba(154,122,56,.12)}
+.prog-row:hover{background:var(--cream2)}
+.prog-num-col{padding:36px 24px;border-right:1px solid rgba(154,122,56,.1);display:flex;flex-direction:column;justify-content:space-between}
+.prog-roman{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);opacity:.35;line-height:1}
+.prog-icon{font-size:18px;margin-top:8px}
+.prog-body{padding:36px}
+.prog-type{font-family:var(--serif);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.75}
+.prog-title{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin-bottom:4px;letter-spacing:-.3px}
+.prog-title-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold-dk);margin-bottom:14px}
+.prog-desc{font-size:14px;color:var(--ink3);line-height:2;opacity:.82;max-width:480px}
+.prog-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ptag{font-family:var(--serif);font-size:11px;color:var(--ink3);background:var(--cream2);padding:3px 10px;border-radius:2px;opacity:.8;letter-spacing:.5px}
+.ptag.g{color:var(--gold-dk);background:rgba(154,122,56,.1);border:1px solid rgba(154,122,56,.25)}
+.prog-meta-col{padding:36px 24px;border-left:1px solid rgba(154,122,56,.1);display:flex;flex-direction:column;justify-content:center}
+.prog-meta{font-family:var(--serif);font-weight:300;font-size:12.5px;color:var(--ink3);line-height:2.2;opacity:.7}
+.prog-meta strong{font-weight:600;color:var(--ink);display:block;font-size:14px}
+
+/* BEGINNER SECTION */
+.beginner-sec{padding:100px 0;background:var(--ink)}
+.beg-header{margin-bottom:60px}
+.beg-header .sec-label{color:var(--gold-lt)}
+.beg-header h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,50px);color:#fff;letter-spacing:-.5px;line-height:1.1;margin-bottom:16px}
+.beg-header p{font-size:15px;color:rgba(255,255,255,.45);line-height:2.2;max-width:580px;font-style:italic}
+.beg-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(154,122,56,.15);border:1px solid rgba(154,122,56,.3);padding:8px 18px;margin-bottom:28px}
+.beg-badge span{font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt)}
+.beg-structure{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.05);margin-bottom:64px}
+.beg-box{background:#211d18;padding:28px 24px;text-align:center}
+.beg-box-num{font-family:var(--serif);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.6}
+.beg-box-val{font-family:var(--serif);font-weight:500;font-size:19px;color:#fff;margin-bottom:4px}
+.beg-box-sub{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;font-style:italic}
+.beg-timeline{position:relative}
+.beg-timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(154,122,56,.5),rgba(154,122,56,.05))}
+.beg-step{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.05);position:relative}
+.beg-step:last-child{border-bottom:none}
+.beg-dot{width:56px;display:flex;flex-direction:column;align-items:center;padding-top:4px;gap:6px;position:relative;z-index:1}
+.beg-dot-circle{width:14px;height:14px;border-radius:50%;background:var(--ink);border:1px solid rgba(154,122,56,.5);flex-shrink:0;transition:all .3s}
+.beg-step:hover .beg-dot-circle{background:var(--gold);border-color:var(--gold)}
+.beg-dot-num{font-family:var(--serif);font-size:11px;color:var(--gold);opacity:.45;letter-spacing:1px}
+.beg-content{padding-bottom:4px}
+.beg-step-tag{display:inline-block;font-family:var(--serif);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dk);border:1px solid rgba(154,122,56,.35);padding:1px 7px;margin-bottom:8px}
+.beg-step-title{font-family:var(--serif);font-weight:500;font-size:17px;color:#fff;margin-bottom:6px}
+.beg-step-body{font-size:13.5px;color:rgba(255,255,255,.45);line-height:2}
+.beg-arrow{margin-top:56px;padding:36px;background:rgba(154,122,56,.08);border:1px solid rgba(154,122,56,.2);display:flex;align-items:center;justify-content:space-between;gap:32px}
+.beg-arrow-text h3{font-family:var(--serif);font-weight:500;font-size:20px;color:#fff;margin-bottom:8px}
+.beg-arrow-text p{font-size:13.5px;color:rgba(255,255,255,.4);line-height:2;font-style:italic}
+.beg-arrow-btn{flex-shrink:0;font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.5);color:var(--gold-lt);padding:13px 28px;transition:all .3s;white-space:nowrap}
+.beg-arrow-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* 100-DAY DETAIL */
+.coaching-detail{background:var(--cream2);padding:80px 0 100px}
+.cd-header{margin-bottom:64px}
+.cd-header h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,48px);color:var(--ink);letter-spacing:-.5px;line-height:1.1;margin-bottom:16px}
+.cd-header p{font-size:14px;color:var(--ink3);line-height:2.3;max-width:600px;opacity:.8;font-style:italic}
+.cd-structure{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--cream3);margin-bottom:64px}
+.cd-box{background:var(--cream2);padding:28px 24px;text-align:center}
+.cd-box-num{font-family:var(--serif);font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.7}
+.cd-box-val{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink);margin-bottom:4px}
+.cd-box-sub{font-size:12px;color:var(--ink3);opacity:.6;line-height:1.7;font-style:italic}
+.cd-flow{display:flex;align-items:center;margin-bottom:64px;background:var(--ink);overflow:hidden}
+.flow-step{flex:1;padding:24px 20px;text-align:center;position:relative}
+.flow-step+.flow-step::before{content:'→';position:absolute;left:-2px;top:50%;transform:translateY(-50%);font-family:var(--serif);color:var(--gold);opacity:.4;font-size:18px}
+.flow-num{font-family:var(--serif);font-size:9px;letter-spacing:2px;color:var(--gold);opacity:.6;margin-bottom:6px}
+.flow-label{font-family:var(--serif);font-weight:500;font-size:13px;color:#fff;margin-bottom:4px}
+.flow-time{font-family:var(--serif);font-size:11px;color:rgba(255,255,255,.3);letter-spacing:1px;font-style:italic}
+.phase-tabs{display:flex;gap:2px;margin-bottom:2px}
+.ptab-btn{flex:1;padding:20px 18px;background:var(--cream3);border:none;cursor:pointer;text-align:left;transition:all .3s;border-bottom:2px solid transparent}
+.ptab-btn:hover{background:var(--cream2)}
+.ptab-btn.active{background:var(--cream);border-bottom-color:var(--gold)}
+.pt-num{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--gold);opacity:.4;line-height:1;margin-bottom:4px}
+.ptab-btn.active .pt-num{opacity:1}
+.pt-lbl{font-family:var(--serif);font-size:8px;letter-spacing:2px;color:var(--gold);opacity:.4;text-transform:uppercase;margin-bottom:3px}
+.ptab-btn.active .pt-lbl{opacity:.8}
+.pt-title{font-family:var(--serif);font-size:12px;color:var(--ink3);opacity:.5;line-height:1.5}
+.ptab-btn.active .pt-title{opacity:.85;color:var(--ink)}
+.phase-panel{display:none;background:var(--cream)}
+.phase-panel.active{display:block}
+.srow{display:grid;grid-template-columns:80px 180px 1fr;padding:20px 32px;border-bottom:1px solid rgba(154,122,56,.08);align-items:start;transition:background .2s}
+.srow:hover{background:var(--cream2)}
+.srow:last-child{border-bottom:none}
+.s-num{font-family:var(--serif);font-size:13px;font-weight:300;color:var(--gold);opacity:.45;padding-top:3px}
+.s-theme{font-family:var(--serif);font-weight:500;font-size:14px;color:var(--ink);padding-top:2px;padding-right:16px;line-height:1.65}
+.s-body{font-size:13px;color:var(--ink3);line-height:2;opacity:.8}
+.stag{display:inline-block;font-family:var(--serif);font-size:9px;letter-spacing:2px;color:var(--gold-dk);border:1px solid rgba(154,122,56,.4);padding:1px 6px;margin-right:5px;vertical-align:middle}
+
+/* QUOTE BAND */
+.quote-band{background:var(--cream3);padding:110px 8%;text-align:center}
+.quote-band blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(22px,3vw,38px);line-height:1.75;max-width:860px;margin:0 auto;color:var(--ink)}
+.quote-band .q-attr{display:block;margin-top:28px;font-family:var(--serif);letter-spacing:4px;font-size:10px;text-transform:uppercase;color:var(--gold)}
+
+/* SAFETY */
+.safety-sec{padding:100px 0;background:var(--cream)}
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px;background:rgba(154,122,56,.08)}
+.safe-box{padding:44px 40px;background:var(--cream)}
+.safe-box h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:18px;color:var(--ink)}
+.safe-box ul{padding-left:18px}
+.safe-box li{margin-bottom:10px;font-size:13.5px;line-height:2.1;color:var(--ink3)}
+
+/* OTHER PROGRAMS */
+.other-prog{padding:80px 0;background:var(--cream)}
+.op-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--cream3)}
+.op-card{background:var(--cream);padding:44px 36px;position:relative;overflow:hidden}
+.op-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.op-card:hover{background:var(--cream2)}
+.op-card:hover::after{transform:scaleX(1)}
+.op-num{font-family:var(--serif);font-size:56px;font-weight:300;color:var(--gold);opacity:.1;line-height:1;margin-bottom:20px}
+.op-type{font-family:var(--serif);font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;opacity:.75}
+.op-title{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.op-desc{font-size:13px;color:var(--ink3);line-height:2;opacity:.75}
+.op-meta{font-family:var(--serif);font-size:12px;color:var(--gold-dk);margin-top:18px;opacity:.85;font-style:italic}
+
+/* FINAL CTA */
+.final-cta{background:var(--ink);padding:130px 8%;text-align:center}
+.final-cta h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,68px);line-height:1.1;letter-spacing:-.5px;color:#fff;margin-bottom:26px}
+.final-cta p{max-width:640px;margin:0 auto;font-size:15px;line-height:2.3;color:rgba(255,255,255,.5);font-style:italic}
+.btn-gold{display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;background:var(--gold);color:#fff;padding:16px 42px;transition:all .3s;margin-top:44px}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:56px 0 36px;text-align:center}
+.ft-sub{font-family:var(--serif);font-weight:300;font-size:10px;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:4px}
+.ft-name{font-family:var(--serif);font-weight:600;font-size:22px;color:rgba(255,255,255,.75);letter-spacing:.5px;margin-bottom:3px}
+.ft-kr{font-family:'Noto Serif KR',serif;font-weight:300;font-size:11px;color:var(--gold);letter-spacing:3px;margin-bottom:24px;opacity:.6}
+.ft-links{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.ft-links a{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold-lt)}
+.ft-cta{display:inline-block;font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(154,122,56,.45);color:var(--gold-lt);padding:12px 30px;transition:all .3s;margin-bottom:32px}
+.ft-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ft-copy{font-family:var(--sans);font-weight:300;font-size:10px;color:rgba(255,255,255,.12);letter-spacing:.5px}
+
+@media(max-width:860px){
+  nav{padding:16px 20px}nav.scrolled{padding:10px 20px}.nav-right .nav-link{display:none}
+  .container{padding:0 20px}
+  .prog-row{grid-template-columns:1fr}.prog-meta-col,.prog-num-col{display:none}
+  .cd-structure{grid-template-columns:1fr 1fr}.cd-flow{flex-direction:column}
+  .flow-step+.flow-step::before{content:'↓';left:50%;top:-2px;transform:translateX(-50%)}
+  .phase-tabs{flex-wrap:wrap}.srow{grid-template-columns:60px 1fr}
+  .srow .s-body{grid-column:2}.op-grid{grid-template-columns:1fr}
+  .safety-grid{grid-template-columns:1fr}
+  .beg-structure{grid-template-columns:1fr 1fr}
+  .beg-arrow{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="16.5" stroke="#9a7a38" stroke-width="1" opacity=".4"/>
+      <path d="M18 4 A14 14 0 1 1 8 28" stroke="#9a7a38" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <circle cx="18" cy="18" r="3" fill="#9a7a38" opacity=".35"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-top">Psychological Counselling Institute</span>
+      <span class="logo-main">The Inner Map</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="en-about.html" class="nav-link">About</a>
+    <a href="en-philosophy.html" class="nav-link">Philosophy</a>
+    <a href="programs-en.html" class="nav-link active">Programs</a>
+    <a href="programs.html" class="lang-switch">한국어</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">Apply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="container">
+    <div class="ph-kicker">Programs · The Inner Map</div>
+    <h1 class="ph-title">A doorway suited<br>to your journey</h1>
+    <p class="ph-body">Every program integrates breathwork and somatic practice. When the body opens, the exploration of mind and psyche deepens.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROGRAM LIST -->
+<section class="prog-section">
+  <div class="container">
+
+    <div class="prog-row reveal">
+      <div class="prog-num-col"><div class="prog-roman">I</div><div class="prog-icon">🌱</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Beginner · Introductory Track</div>
+        <div class="prog-title">10-Session Beginner Coaching</div>
+        <div class="prog-title-sub">10-Session Beginner Track</div>
+        <div class="prog-desc">Over five weeks and ten sessions, you learn the language of the body, understand your elemental constitution, and open the first door to the unconscious. Breathwork, Five-Element temperament mapping, and an initial encounter with the shadow — an introductory course for those exploring their inner world for the first time.</div>
+        <div class="prog-tags">
+          <span class="ptag g">Breathwork Intro</span>
+          <span class="ptag">Five Elements</span>
+          <span class="ptag">Shadow Work</span>
+          <span class="ptag">Body Awareness</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>5-Week Course</strong>2× per week / 10 sessions<br>50 min per session<br>Online or In-person</div></div>
+    </div>
+
+    <div class="prog-row reveal d1">
+      <div class="prog-num-col"><div class="prog-roman">II</div><div class="prog-icon">🜁</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Signature · Flagship Program</div>
+        <div class="prog-title">100-Day Integrative Coaching</div>
+        <div class="prog-title-sub">100-Day Integrative Individuation Program</div>
+        <div class="prog-desc">Five-Element temperament analysis → breathwork practice → shadow &amp; archetype work → inner inquiry → integrative depth psychology. The most complete journey of individuation — body, mind, and psyche deepening together over 100 days. This is not conventional counselling. It is an existential journey: releasing bodily tension, stabilising the breath, understanding the currents of the unconscious, and integrating life's repeating patterns so that you may live in harmony with the Self.</div>
+        <div class="prog-tags">
+          <span class="ptag">Five-Element Analysis</span>
+          <span class="ptag g">Breathwork · Gong Practice</span>
+          <span class="ptag">Shadow Work</span>
+          <span class="ptag">Dream Analysis</span>
+          <span class="ptag">Inner Inquiry</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>100-Day Journey</strong>2× per week / 50 sessions<br>50 min per session<br>Online or In-person</div></div>
+    </div>
+
+    <div class="prog-row reveal d2">
+      <div class="prog-num-col"><div class="prog-roman">III</div><div class="prog-icon">☯</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Group · Small-Group Workshop</div>
+        <div class="prog-title">Original Face — One-Day Intensive</div>
+        <div class="prog-title-sub">Original Face · One-Day Intensive</div>
+        <div class="prog-desc">Morning breathwork and movement open the body; afternoon inner-inquiry practice opens the heart; evening group sharing integrates the psyche. An intimate one-day journey for groups of 6–10.</div>
+        <div class="prog-tags">
+          <span class="ptag g">Breathwork &amp; Movement</span><span class="ptag">Inner Inquiry</span><span class="ptag">Group Sharing</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>One-Day Intensive</strong>6–10 participants<br>Offered quarterly</div></div>
+    </div>
+
+    <div class="prog-row reveal d3">
+      <div class="prog-num-col"><div class="prog-roman">IV</div><div class="prog-icon">◎</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Retreat · Silent Retreat</div>
+        <div class="prog-title">Silence &amp; Insight — Retreat</div>
+        <div class="prog-title-sub">Silence &amp; Insight · Retreat</div>
+        <div class="prog-desc">Each day opens with dawn still-practice (靜功), continues through Jungian psychology and inner exploration in the afternoon, and closes with a 1:1 temperament consultation in the evening. Three nights and four days in nature — body, mind, and psyche resting and deepening together.</div>
+        <div class="prog-tags">
+          <span class="ptag g">Dawn Still-Practice</span><span class="ptag">1:1 Consultation</span><span class="ptag">Silent Practice</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>3 Nights / 4 Days</strong>8 participants max<br>Offered twice yearly</div></div>
+    </div>
+
+    <div class="prog-row reveal d4">
+      <div class="prog-num-col"><div class="prog-roman">V</div><div class="prog-icon">♾</div></div>
+      <div class="prog-body">
+        <div class="prog-type">Professional · Advanced Training</div>
+        <div class="prog-title">Practitioner Integration Training</div>
+        <div class="prog-title-sub">Professional Integration Training</div>
+        <div class="prog-desc">An advanced course for counsellors, coaches, and meditation teachers. From foundational breathwork instruction through to the integrated application of Five-Element temperament, Jungian psychology, and inner inquiry — studied systematically across six months.</div>
+        <div class="prog-tags">
+          <span class="ptag g">Breathwork Instruction</span><span class="ptag">Advanced Curriculum</span><span class="ptag">Certificate Issued</span>
+        </div>
+      </div>
+      <div class="prog-meta-col"><div class="prog-meta"><strong>6-Month Advanced</strong>For practitioners<br>In-person only</div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BEGINNER DETAIL -->
+<section class="beginner-sec" id="beginner">
+  <div class="container">
+    <div class="beg-header reveal">
+      <div class="beg-badge"><span>Beginner Track · Introductory Course</span></div>
+      <span class="sec-label">Program I · In Detail</span>
+      <h2>10-Session Beginner Coaching</h2>
+      <p>Over five weeks and ten sessions you learn the language of the body, come to understand your own elemental temperament, and knock on the first door of the unconscious. An introductory course for those exploring their inner world for the first time.</p>
+    </div>
+
+    <div class="beg-structure reveal">
+      <div class="beg-box">
+        <div class="beg-box-num">Duration</div>
+        <div class="beg-box-val">5 Weeks</div>
+        <div class="beg-box-sub">Focused introductory<br>journey</div>
+      </div>
+      <div class="beg-box">
+        <div class="beg-box-num">Sessions</div>
+        <div class="beg-box-val">2× per week</div>
+        <div class="beg-box-sub">10 sessions total<br>50 min each</div>
+      </div>
+      <div class="beg-box">
+        <div class="beg-box-num">Format</div>
+        <div class="beg-box-val">1:1</div>
+        <div class="beg-box-sub">Online (Zoom)<br>or In-person</div>
+      </div>
+    </div>
+
+    <div class="beg-timeline reveal">
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">01</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Orientation</div>
+          <div class="beg-step-title">First Meeting — Reading Your Current Flow</div>
+          <div class="beg-step-body">Together we look at your current stress patterns, the structure of tension held in the body, and the rhythms of sleep and relationship. Time to understand, through the body itself, that this is a journey of existential inquiry rather than conventional counselling.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">02</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Five Elements</div>
+          <div class="beg-step-title">Five-Element Temperament Analysis — Understanding Your Natural Current</div>
+          <div class="beg-step-body">We map your temperament structure through the energy patterns of Wood, Fire, Earth, Metal, and Water. This is not fatalistic — it is a practical inquiry into how energy currently flows and where it has become rigid in your life.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">03</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Breathing</div>
+          <div class="beg-step-title">Dan-tian Breathwork — The Experience of the Body Touching the Present</div>
+          <div class="beg-step-body">Stabilising the breath and restoring somatic awareness. When the breath reaches the dan-tian, tension releases and the body returns to the present — a direct, felt experience. Foundational grounding practice for all further inquiry.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">04</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Body Scan</div>
+          <div class="beg-step-title">Mapping the Body — Linking Tension and Emotion</div>
+          <div class="beg-step-body">Shoulders, chest, abdomen — we explore where tension has accumulated in the body. Learning to notice the connection between physical sensation and emotion is the first key to psychological inquiry.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">05</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Persona</div>
+          <div class="beg-step-title">Exploring the Persona — What Roles Have You Been Playing?</div>
+          <div class="beg-step-body">We examine the gap between the social mask and the authentic self. "The good person," "the capable one," "the caregiver" — we quietly investigate which roles have been exhausting you.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">06</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Gong Practice</div>
+          <div class="beg-step-title">Movement Practice (行功) — Opening the Body Through Motion</div>
+          <div class="beg-step-body">Moving beyond still breathwork, we learn foundational gong movements that support the circulation of qi through the body. When the body moves, emotions and energies that have been blocked naturally begin to surface.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">07</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Shadow · First Encounter</div>
+          <div class="beg-step-title">Meeting the Shadow — The Voice of What Has Been Suppressed</div>
+          <div class="beg-step-body">Recurring emotional reactions, situations that easily provoke anger, inexplicable fatigue — these are signals from the shadow. We meet them for the first time from a perspective of understanding rather than elimination.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">08</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Pattern</div>
+          <div class="beg-step-title">Recognising Repeating Patterns — What Keeps Coming Back?</div>
+          <div class="beg-step-body">We look objectively at recurring patterns in relationship, work, and emotional response. The act of recognising a pattern is already enough to begin changing the flow.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">09</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Integration</div>
+          <div class="beg-step-title">Completing Your Temperament Map — Connecting Body and Psyche</div>
+          <div class="beg-step-body">We bring together your Five-Element temperament, the tension patterns of the body, and the first shape of your shadow into a single map. A first answer to the question "who am I?" drawn together with the body.</div>
+        </div>
+      </div>
+
+      <div class="beg-step">
+        <div class="beg-dot"><div class="beg-dot-circle"></div><div class="beg-dot-num">10</div></div>
+        <div class="beg-content">
+          <div class="beg-step-tag">Closing</div>
+          <div class="beg-step-title">Integration &amp; Closing — Your First Map</div>
+          <div class="beg-step-body">We look back over the five-week journey and design a direction for future inquiry. Body, temperament, and the first shape of the shadow are brought together into a single map as the course draws to a close. Whatever comes next, the flow has already begun.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="beg-arrow reveal">
+      <div class="beg-arrow-text">
+        <h3>Ten sessions to understand yourself</h3>
+        <p>Learning the language of the body, mapping your temperament, recognising repeating patterns.<br>This alone is enough for the flow of your life to begin to shift.</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="beg-arrow-btn">Apply — Beginner Course</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 100-DAY DETAIL -->
+<section class="coaching-detail">
+  <div class="container">
+    <div class="cd-header reveal">
+      <span class="sec-label">Program II · In Detail</span>
+      <h2>100-Day 1:1 Integrative Coaching<br>— The Most Complete Journey</h2>
+      <p>100 days is the minimum time a person needs to genuinely change. Over two sessions a week — 50 sessions in total — the body opens, the unconscious surfaces, and life is restructured. The programme moves through stabilisation → exploration → healing → individuation. The aim is not dissolution but the restoration of flow in body and life, and learning to live in harmony with the Self.</p>
+    </div>
+
+    <div class="cd-structure reveal">
+      <div class="cd-box">
+        <div class="cd-box-num">Duration</div>
+        <div class="cd-box-val">100 Days</div>
+        <div class="cd-box-sub">Approx. 14 weeks<br>of deep inquiry</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Sessions</div>
+        <div class="cd-box-val">2× per week</div>
+        <div class="cd-box-sub">50 sessions total<br>50–60 min each</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Format</div>
+        <div class="cd-box-val">1:1</div>
+        <div class="cd-box-sub">Online (Zoom)<br>or In-person</div>
+      </div>
+      <div class="cd-box">
+        <div class="cd-box-num">Structure</div>
+        <div class="cd-box-val">4 Phases</div>
+        <div class="cd-box-sub">Stabilise → Explore<br>→ Heal → Individuate</div>
+      </div>
+    </div>
+
+    <div class="cd-flow reveal">
+      <div class="flow-step">
+        <div class="flow-num">Opening · 10 min</div>
+        <div class="flow-label">Breathwork</div>
+        <div class="flow-time">Dan-tian / Breath Regulation</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Grounding · 10 min</div>
+        <div class="flow-label">Opening Meditation</div>
+        <div class="flow-time">Somatic Awareness</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Core Work · 25 min</div>
+        <div class="flow-label">Core Practice</div>
+        <div class="flow-time">Psychology / Dreams / Temperament</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">Integration · 5 min</div>
+        <div class="flow-label">Integration Practice</div>
+        <div class="flow-time">Daily-Life Application</div>
+      </div>
+    </div>
+
+    <div class="phase-tabs reveal">
+      <button class="ptab-btn active" onclick="switchPhase(0)">
+        <div class="pt-num">I</div>
+        <div class="pt-lbl">Phase 1 · Sessions 1–12</div>
+        <div class="pt-title">Stabilisation &amp;<br>Mapping the Terrain</div>
+      </button>
+      <button class="ptab-btn" onclick="switchPhase(1)">
+        <div class="pt-num">II</div>
+        <div class="pt-lbl">Phase 2 · Sessions 13–28</div>
+        <div class="pt-title">The Unconscious &amp;<br>Symbolic Inquiry</div>
+      </button>
+      <button class="ptab-btn" onclick="switchPhase(2)">
+        <div class="pt-num">III</div>
+        <div class="pt-lbl">Phase 3 · Sessions 29–40</div>
+        <div class="pt-title">Wounds, Relationship<br>&amp; Reconstruction</div>
+      </button>
+      <button class="ptab-btn" onclick="switchPhase(3)">
+        <div class="pt-num">IV</div>
+        <div class="pt-lbl">Phase 4 · Sessions 41–50</div>
+        <div class="pt-title">Individuation &amp;<br>Living It</div>
+      </button>
+    </div>
+
+    <div class="phase-panel active" id="ph0">
+      <div class="srow"><div class="s-num">1–2</div><div class="s-theme">Five-Element Temperament Analysis</div><div class="s-body"><span class="stag">Five Elements</span>Mapping the inborn temperament structure through the Five Elements. Cross-referenced with Jung's psychological types. Introduction of breathwork suited to your elemental constitution.</div></div>
+      <div class="srow"><div class="s-num">3–4</div><div class="s-theme">Breath Regulation — Introductory Practice</div><div class="s-body"><span class="stag">Breathing</span>Stabilising the breath and restoring somatic awareness. The direct experience of the body returning to the present when breath settles into the dan-tian. Exploring the gap between persona and authentic self.</div></div>
+      <div class="srow"><div class="s-num">5–8</div><div class="s-theme">Mapping the Flow of Life</div><div class="s-body">Analysing sleep, relationships, daily rhythm, and stress patterns together. Understanding the actual structure of life before engaging in psychological work proper.</div></div>
+      <div class="srow"><div class="s-num">9–10</div><div class="s-theme">Movement Practice (行功) — Introduction</div><div class="s-body"><span class="stag">Breathing</span>Foundational gong movements. The experience of suppressed emotions and blocked energy finding expression through movement as qi circulation opens in the body.</div></div>
+      <div class="srow"><div class="s-num">11–12</div><div class="s-theme">Persona and Shadow</div><div class="s-body">Exploring social roles and suppressed emotional patterns. Noticing how tension in the body connects to emotional patterns. Preparing for Phase 2.</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph1">
+      <div class="srow"><div class="s-num">13–16</div><div class="s-theme">Dream Work</div><div class="s-body"><span class="stag">Dream Work</span>Dreams are not interpreted as fixed answers. We explore the messages of the unconscious by connecting them to emotion, sensation, and the flow of daily life. First, finding in the body — through dan-tian breathing — the sensations felt in the dream.</div></div>
+      <div class="srow"><div class="s-num">17–20</div><div class="s-theme">Archetypal Inquiry</div><div class="s-body">Identifying the recurring archetypal patterns at work — Hero, Sage, Inner Child, Anima/Animus. Exploring how each archetype manifests as posture and tension patterns in the body, and how they are projected in relationship.</div></div>
+      <div class="srow"><div class="s-num">21–24</div><div class="s-theme">Active Imagination</div><div class="s-body"><span class="stag">Meditative Inquiry</span>Entering into dialogue with the unconscious while the body is open. Active imagination immediately after movement practice. Images from the unconscious arise more clearly when the body has been prepared. Integrating symbolic insight back into connection with lived reality.</div></div>
+      <div class="srow"><div class="s-num">25–26</div><div class="s-theme">Deepening Dream Work</div><div class="s-body">Analysis of recurring dream patterns and symbols. Connecting the messages of the unconscious to daily life. Confirming how complexes are stored in the body as blocked qi.</div></div>
+      <div class="srow"><div class="s-num">27–28</div><div class="s-theme">Inner Inquiry</div><div class="s-body"><span class="stag">Meditative Inquiry</span>"Who is it that is listening in this moment?" After 30 minutes of still-practice, the inquiry opens in deep stillness. Reviewing the flow of unconscious exploration. Preparing for Phase 3.</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph2">
+      <div class="srow"><div class="s-num">29–32</div><div class="s-theme">Inner Child Work</div><div class="s-body">Exploring the connection between emotional memories from childhood and tension patterns held in the body. Bringing suppressed emotions into awareness safely. Opening the body's memory of the inner child through spontaneous movement practice.</div></div>
+      <div class="srow"><div class="s-num">33–36</div><div class="s-theme">Relationship and Boundaries</div><div class="s-body">Understanding recurring relational dynamics, emotional entanglement, and defensive structures. Recognising projection and transference in daily life. Exploring how the body's defensive postures connect to relational patterns. Practising healthy distance and authentic self-expression.</div></div>
+      <div class="srow"><div class="s-num">37–38</div><div class="s-theme">Forgiveness and Reconciliation</div><div class="s-body">Forgiveness is neither suppression nor idealisation. Receiving the shadow as energy. A process of integration in which psychological energy that has been blocked is able to flow again. The union of opposites is felt in the body as the balancing of qi.</div></div>
+      <div class="srow"><div class="s-num">39–40</div><div class="s-theme">Reconstructing Life</div><div class="s-body">Redesigning the direction and meaning of your life. Re-reading the Five-Element temperament chart. Beginning to choose a new flow rather than the repetitions of the past. Establishing an individuation plan for the final ten sessions.</div></div>
+    </div>
+
+    <div class="phase-panel" id="ph3">
+      <div class="srow"><div class="s-num">41–44</div><div class="s-theme">Inquiry into the Self</div><div class="s-body"><span class="stag">Individuation</span>Understanding the Self not as a transcendent concept but as the centre that integrates the whole of the psyche harmoniously. Just as the dan-tian is the centre of the body, the Self is the centre of the psyche — experiencing how the body's centre and the psyche's centre are one.</div></div>
+      <div class="srow"><div class="s-num">45–46</div><div class="s-theme">The Myth of Your Life</div><div class="s-body">Re-reading the story (mythos) that runs through your life. Moving from a narrative centred on wounds to one shaped by meaning and direction. Re-reading the Five-Element temperament in the light of the 100-day journey.</div></div>
+      <div class="srow"><div class="s-num">47–48</div><div class="s-theme">Embodying Life</div><div class="s-body">Designing concretely how to live within relationship, work, creativity, and practice. Designing the practical methods of an individuated life together.</div></div>
+      <div class="srow"><div class="s-num">49–50</div><div class="s-theme">Integration Ritual &amp; Closing</div><div class="s-body"><span class="stag">Closing Ritual</span>Closing movement ritual → integrating body, psyche, and the flow of being into one as the 100-day journey completes. Designing the direction of personal practice going forward. A closing ceremony in which body, mind, and spirit come together.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE BAND -->
+<section class="quote-band">
+  <div class="reveal">
+    <blockquote>
+      "We are not here to make you into a new person.<br>We are here to let flow again what is already flowing within you."
+    </blockquote>
+    <span class="q-attr">The Inner Map · The Individuation Journey</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SAFETY -->
+<section class="safety-sec">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-label">Safety &amp; Grounding</span>
+      <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.5vw,44px);color:var(--ink);letter-spacing:-.3px;line-height:1.15;margin-bottom:16px">Grounding and<br>real-world stability matter deeply to us</h2>
+      <p style="font-size:14px;color:var(--ink3);line-height:2.3;max-width:640px;opacity:.8;font-style:italic">While this programme involves deep existential inquiry, real-world grounding and somatic stabilisation are treated as essential. All inquiry takes place on the foundation of grounded, stable daily functioning.</p>
+    </div>
+    <div class="safety-grid">
+      <div class="safe-box reveal">
+        <h3>Before the Programme Begins</h3>
+        <ul>
+          <li>Assessment of current life situation and stress levels</li>
+          <li>Check of bodily tension and breathing patterns</li>
+          <li>Programme suitability orientation</li>
+          <li>Setting personal goals and direction</li>
+        </ul>
+      </div>
+      <div class="safe-box reveal d1">
+        <h3>Programme Principles</h3>
+        <ul>
+          <li>Integration is always prioritised over dissolution</li>
+          <li>Deep inquiry does not proceed without somatic stabilisation</li>
+          <li>Spiritual experiences are not absolutised</li>
+          <li>Application within real relationships and daily life is treated as essential</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OTHER PROGRAMS -->
+<section class="other-prog">
+  <div class="container">
+    <div style="margin-bottom:48px" class="reveal">
+      <span class="sec-label">Other Programs</span>
+      <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(24px,3vw,34px);color:var(--ink);letter-spacing:-.3px">There are many ways<br>to begin your journey</h2>
+    </div>
+    <div class="op-grid">
+      <div class="op-card reveal">
+        <div class="op-num">III</div>
+        <div class="op-type">Group Workshop</div>
+        <div class="op-title">Original Face<br>One-Day Intensive</div>
+        <div class="op-desc">Morning breathwork and movement open the body; afternoon inner-inquiry practice opens the heart; evening group sharing integrates the psyche. A one-day intensive journey for groups of 6–10.</div>
+        <div class="op-meta">6–10 participants · 1 day · Quarterly</div>
+      </div>
+      <div class="op-card reveal d1">
+        <div class="op-num">IV</div>
+        <div class="op-type">Silent Retreat</div>
+        <div class="op-title">Silence &amp; Insight<br>Retreat</div>
+        <div class="op-desc">Each day begins with dawn still-practice, continues through Jungian psychology and inner exploration, and closes with a 1:1 temperament consultation. Three nights and four days in nature — body, mind, and psyche deepening together.</div>
+        <div class="op-meta">8 participants · 3 nights / 4 days · Twice yearly</div>
+      </div>
+      <div class="op-card reveal d2">
+        <div class="op-num">V</div>
+        <div class="op-type">Professional Training</div>
+        <div class="op-title">Practitioner<br>Integration Training</div>
+        <div class="op-desc">An advanced course for counsellors, coaches, and meditation teachers. From foundational breathwork instruction through to the integrated application of Jungian psychology, inner inquiry, and Five-Element temperament — studied systematically.</div>
+        <div class="op-meta">For practitioners · 6 months · Certificate issued</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="apply">
+  <div class="reveal">
+    <h2>Are you ready to begin<br>your journey?</h2>
+    <p>Restoring the flow of the body, integrating the unconscious, learning to live in harmony with the Self. This programme is not ordinary counselling — it is a deep inquiry that looks again at life as a whole.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="btn-gold">Apply Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-sub">Psychological Counselling Institute</div>
+  <div class="ft-name">The Inner Map</div>
+  <div class="ft-kr">내면의 지도</div>
+  <div class="ft-links">
+    <a href="index.html">Home</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="programs.html">Programs</a>
+    <a href="about.html">About</a>
+    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">Apply Now</a>
+  <div class="ft-copy">© 2025 The Inner Map · Integrative Individuation · All rights reserved.</div>
+</footer>
+
+<script>
+const _n = document.getElementById('nav');
+window.addEventListener('scroll', () => _n.classList.toggle('scrolled', window.scrollY > 50));
+document.querySelectorAll('.reveal').forEach(el => {
+  new IntersectionObserver(e => e.forEach(x => {
+    if (x.isIntersecting) x.target.classList.add('visible');
+  }), { threshold: .07, rootMargin: '0px 0px -20px 0px' }).observe(el);
+});
+function switchPhase(idx) {
+  document.querySelectorAll('.ptab-btn').forEach((t, i) => t.classList.toggle('active', i === idx));
+  document.querySelectorAll('.phase-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+}
+</script>
+</body>
+</html>
