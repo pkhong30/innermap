@@ -138,6 +138,36 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   .pillars-inner{flex-direction:column;gap:40px}
   .pillars-right{grid-template-columns:1fr 1fr 1fr}
 }
+  .special-banner{
+  margin: 120px auto 0;
+  max-width: 1040px;
+  padding: 30px 40px;
+  background: linear-gradient(135deg, #9a7a38, #c4a05a);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.special-banner:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.special-banner .title{
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.special-banner .sub{
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 6px;
+}
 </style>
 </head>
 <body>
@@ -217,7 +247,43 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
 </section>
 
 <div class="divider"></div>
+  <!-- 6월 특별 프로그램 배너 START -->
+<section class="special-banner">
 
+  <div class="special-label">June Special Program</div>
+
+  <h2 class="special-title">
+    몸 · 마음 · 호흡<br>
+    10회 특별 프로그램
+  </h2>
+
+  <p class="special-desc">
+    화요일과 목요일 오전 10시.<br>
+    몸을 통해 마음을 이해하고,<br>
+    호흡을 통해 감정을 정리하는 10회 과정.<br><br>
+
+    2026년 6월 둘째 주 시작 · 주 2회 · 총 10회
+  </p>
+
+  <div class="special-buttons">
+
+    <!-- 프로그램 상세 페이지 -->
+    <a href="bodybreathmindprogram.html" class="special-btn special-btn-main">
+      프로그램 자세히 보기
+    </a>
+
+    <!-- 신청 링크 -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhcb09GcWM_xvnajZL_tSYkIS-PTzK90TTPJWRkSX6Va0Jtg/viewform?usp=sharing"
+       target="_blank"
+       class="special-btn special-btn-sub">
+      신청하기
+    </a>
+
+  </div>
+
+</section>
+<!-- 6월 특별 프로그램 배너 END -->
+<div class="divider"></div>
 <!-- CARDS -->
 <section class="cards-section">
   <div class="container">
