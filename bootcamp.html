@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abyss AI 지식 생산 부트캠프 1기 모집</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: var(--bg-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Problem Section */
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 60px 0 30px 0;
+            color: var(--accent-blue);
+        }
+
+        .problem-box {
+            background-color: #1a1625;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+
+        /* Curriculum Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #151f32;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Features List */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-purple);
+        }
+
+        /* Call To Action */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1e1b4b, #0f172a);
+            padding: 50px 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .btn-register {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero">
+        <span class="badge">소수정예 프리미엄 코칭</span>
+        <h1>어려운 심리학·철학 원서 격파부터<br>유튜브 콘텐츠 생산까지 단 4주 만에</h1>
+        <p>인공지능(AI)을 단순한 요약 툴로 쓰는 단계를 넘어, 당신의 '독점적 지식 생산 파트너'로 길들이는 초효율 시스템을 전수합니다.</p>
+        <a href="#register" class="btn-register">부트캠프 1기 신청하기</a>
+    </div>
+
+    <h2 class="section-title">왜 우리는 원서 읽기와 콘텐츠 제작에 실패할까요?</h2>
+    <div class="problem-box">
+        <p style="margin: 0; color: #fca5a5;">
+            인간의 의지와 끈기만 의존하는 독서는 반드시 지칩니다. 하인즈 코후트, 카를 융, 화이트헤드 같은 거장들의 원전은 단어의 장벽과 맥락의 난해함으로 우리를 좌절하게 만듭니다. 게다가 공부한 내용을 콘텐츠로 만드는 것은 또 다른 영역의 중노동입니다.
+        </p>
+    </div>
+
+    <h2 class="section-title">해답은 'AI 다층 협업 파이프라인'입니다</h2>
+    <p>본 부트캠프에서는 제가 매일 실천하고 있는 <strong>[하루 50분 원서 격파 루틴]</strong>을 완벽하게 이식해 드립니다. NotebookLM에 3개 이상의 고난도 원전을 교차 참조 스케일로 올리고, 미시적(패러그랩 단위 딥 러닝) 분석과 거시적 서머리를 추출하여, 즉시 유튜브 스크립트와 영상 오디오로 변환해 내는 완벽한 지식 선순환 구조를 체화합니다.</p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>교차 참조(Cross-reference) 분석</h3>
+            <p>메인 원서 외에 맥락을 보완할 서브 원전들을 유기적으로 결합하여, AI가 가장 정교하고 깊이 있는 학술적 답변을 뱉어내도록 프롬프트를 세팅합니다.</p>
+        </div>
+        <div class="card">
+            <h3>메타인지의 극대화</h3>
+            <p>눈으로만 읽는 독서는 휘발됩니다. AI와 치열하게 나눈 대화록을 2차 가공하여 '남을 가르치는 콘텐츠(유튜브)'로 변환할 때 지식은 온전히 당신의 것이 됩니다.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">4주간의 마스터 커리큘럼</h2>
+    <p style="text-align: center; color: var(--text-muted);">※ 예시 교재: Heinz Kohut - <em>The Restoration of the Self</em> 등 개별 선택</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">주차</th>
+                <th style="width: 30%;">핵심 목표</th>
+                <th style="width: 50%;">상세 내용 및 미션</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1주차</strong></td>
+                <td>지식 생산 공장 건설</td>
+                <td>NotebookLM 인프라 구축, 메인 원서 및 서브 원전 3권 배치, 구글 플레이 북스 연동 및 최초 프롬프트 실습</td>
+            </tr>
+            <tr>
+                <td><strong>2주차</strong></td>
+                <td>50분 딥 워크 루틴 체화</td>
+                <td>한 줄씩 번역·해석을 요청하고 맥락을 장악하는 미시적 학습 프로세스 체득 및 일일 학습 리포트 생성</td>
+            </tr>
+            <tr>
+                <td><strong>3주차</strong></td>
+                <td>입체적 원전 분석</td>
+                <td>서브 원전들과의 관점 교차 검증 프롬프트 구사, 학술적 통찰이 담긴 나만의 대화록(A4 3~5장) 완성</td>
+            </tr>
+            <tr>
+                <td><strong>4주차</strong></td>
+                <td>지식 출력 (유튜브화)</td>
+                <td>대화록을 오디오 스크립트로 정제하는 2차 AI 워크플로우를 거쳐, 실제 내 채널에 지식 에세이 영상 업로드</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="register" class="cta-section">
+        <h2>Abyss 지식 커뮤니티와 함께하는 첫 번째 도약</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">
+            AI 툴 사용법을 몰라서가 아닙니다. 그것들을 유기적으로 연결해 '진짜 깊이 있는 지식'을 생산하는 시스템은 오직 여기서만 배울 수 있습니다.<br>
+            <strong>시작일:</strong> 2026년 6월 초 (소수 정예 선착순 마감)
+        </p>
+        <a href="mailto:pkhong30@gmail.com?subject=[부트캠프 신청] 이름/연락처" class="btn-register">지금 코칭 신청하기 (이메일 문의)</a>
+    </div>
+
+</div>
+
+</body>
+</html>
