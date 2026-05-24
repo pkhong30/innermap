@@ -30,8 +30,27 @@ nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding
 .nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
 .logo-mark{width:38px;height:38px;flex-shrink:0}
 .logo-text{display:flex;flex-direction:column}
-.logo-top{font-family:var(--sans-kr);font-weight:300;font-size:9px;color:var(--ink3);letter-spacing:2.5px;margin-bottom:1px;opacity:.7}
-.logo-main{font-family:var(--serif-kr);font-weight:900;font-size:15px;color:var(--ink);letter-spacing:-.2px;line-height:1}
+
+/* [수정] 심리상담연구소 글자 크기 확대 및 은은한 골드빛 변경 */
+.logo-top{
+  font-family:var(--sans-kr);
+  font-weight:400;
+  font-size:11px;
+  color:var(--gold-lt);
+  letter-spacing:1.5px;
+  margin-bottom:3px;
+  opacity:0.9;
+}
+/* [수정] 상단 글자 확대에 맞춰 '내면의 지도' 크기도 균형있게 조정 */
+.logo-main{
+  font-family:var(--serif-kr);
+  font-weight:900;
+  font-size:17px;
+  color:var(--ink);
+  letter-spacing:-.2px;
+  line-height:1;
+}
+
 .nav-right{display:flex;align-items:center;gap:32px}
 .nav-link{font-family:var(--serif-kr);font-weight:300;font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .3s;opacity:.7}
 .nav-link:hover,.nav-link.active{color:var(--gold);opacity:1}
@@ -138,35 +157,105 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   .pillars-inner{flex-direction:column;gap:40px}
   .pillars-right{grid-template-columns:1fr 1fr 1fr}
 }
-  .special-banner{
-  margin: 120px auto 0;
+
+/* [추가] 6월 특별 프로그램 배너 전용 고급화 스타일 명세 */
+.special-banner {
+  margin: 100px auto 0;
   max-width: 1040px;
-  padding: 30px 40px;
-  background: linear-gradient(135deg, #9a7a38, #c4a05a);
-  color: #fff;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, var(--ink), var(--ink2));
+  border: 1px solid rgba(154, 122, 56, 0.3);
+  color: var(--cream);
   text-align: center;
-  text-decoration: none;
   display: block;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-
-.special-banner:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+.special-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(154, 122, 56, 0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
-
-.special-banner .title{
-  font-size: 20px;
+.special-label {
+  font-family: var(--serif-en);
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--gold-lt);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+.special-title {
+  font-family: var(--serif-kr);
   font-weight: 600;
-  letter-spacing: 1px;
+  font-size: clamp(24px, 3.5vw, 36px);
+  color: var(--cream);
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+  margin-bottom: 24px;
 }
-
-.special-banner .sub{
+.special-desc {
+  font-family: var(--sans-kr);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--cream2);
+  line-height: 2;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  opacity: 0.85;
+}
+.special-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.special-btn {
+  font-family: var(--serif-kr);
   font-size: 13px;
-  opacity: 0.9;
-  margin-top: 6px;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+.special-btn-main {
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+.special-btn-main:hover {
+  background: var(--gold-lt);
+  transform: translateY(-2px);
+}
+.special-btn-sub {
+  background: transparent;
+  color: var(--gold-lt);
+  border: 1px solid rgba(154, 122, 56, 0.6);
+}
+.special-btn-sub:hover {
+  background: rgba(154, 122, 56, 0.1);
+  border-color: var(--gold-lt);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+@media(max-width:768px) {
+  .special-banner {
+    margin: 60px 24px 0;
+    padding: 40px 24px;
+  }
+  .special-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .special-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -187,8 +276,8 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   <div class="nav-right">
     <a href="about.html" class="nav-link">연구소 소개</a>
     <a href="philosophy.html" class="nav-link">철학</a>
-<a href="programs.html" class="nav-link">프로그램</a>
-<a href="bootcamp.html" class="nav-link" style="color: #c4a05a; font-weight: 600; opacity: 1;">부트캠프 1기</a>
+    <a href="programs.html" class="nav-link">프로그램</a>
+    <a href="bootcamp.html" class="nav-link" style="color: #c4a05a; font-weight: 600; opacity: 1;">부트캠프 1기</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="nav-cta">상담 신청</a>
   </div>
 </nav>
@@ -200,13 +289,9 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
 
   <div class="hero-logo">
     <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- outer ring -->
       <circle cx="45" cy="45" r="42" stroke="#9a7a38" stroke-width="1.2" opacity=".4"/>
-      <!-- enso brushstroke -->
       <path d="M45 8 A37 37 0 1 1 22 74" stroke="#9a7a38" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <!-- center dot -->
       <circle cx="45" cy="45" r="4" fill="#9a7a38" opacity=".35"/>
-      <!-- inner ring -->
       <circle cx="45" cy="45" r="14" stroke="#9a7a38" stroke-width=".8" opacity=".2"/>
     </svg>
   </div>
@@ -247,9 +332,9 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
 </section>
 
 <div class="divider"></div>
-  <!-- 6월 특별 프로그램 배너 START -->
-<section class="special-banner">
 
+<!-- 6월 특별 프로그램 배너 START -->
+<section class="special-banner">
   <div class="special-label">June Special Program</div>
 
   <h2 class="special-title">
@@ -261,29 +346,25 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
     화요일과 목요일 오전 10시.<br>
     몸을 통해 마음을 이해하고,<br>
     호흡을 통해 감정을 정리하는 10회 과정.<br><br>
-
-    2026년 6월 둘째 주 시작 · 주 2회 · 총 10회
+    <span style="color: var(--gold-lt);">2026년 6월 둘째 주 시작 · 주 2회 · 총 10회</span>
   </p>
 
   <div class="special-buttons">
-
-    <!-- 프로그램 상세 페이지 -->
     <a href="bodybreathmindprogram.html" class="special-btn special-btn-main">
       프로그램 자세히 보기
     </a>
-
-    <!-- 신청 링크 -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhcb09GcWM_xvnajZL_tSYkIS-PTzK90TTPJWRkSX6Va0Jtg/viewform?usp=sharing"
        target="_blank"
+       rel="noopener"
        class="special-btn special-btn-sub">
       신청하기
     </a>
-
   </div>
-
 </section>
 <!-- 6월 특별 프로그램 배너 END -->
+
 <div class="divider"></div>
+
 <!-- CARDS -->
 <section class="cards-section">
   <div class="container">
@@ -338,7 +419,6 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   </div>
 </section>
 
-
 <footer>
   <div class="ft-logo">심리상담연구소</div>
   <div class="ft-name">내면의 지도</div>
@@ -353,6 +433,7 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank" rel="noopener" class="ft-cta">상담 신청하기</a>
   <div class="ft-copy">© 2025 심리상담연구소 내면의 지도 · All rights reserved.</div>
 </footer>
+
 <script>
 const _n=document.getElementById('nav');
 window.addEventListener('scroll',()=>_n.classList.toggle('scrolled',window.scrollY>50));
