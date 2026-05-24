@@ -30,27 +30,8 @@ nav.scrolled{background:rgba(247,243,237,.96);backdrop-filter:blur(12px);padding
 .nav-logo{text-decoration:none;display:flex;align-items:center;gap:14px}
 .logo-mark{width:38px;height:38px;flex-shrink:0}
 .logo-text{display:flex;flex-direction:column}
-
-/* [수정] 심리상담연구소 글자 크기 확대 및 은은한 골드빛 변경 */
-.logo-top{
-  font-family:var(--sans-kr);
-  font-weight:400;
-  font-size:11px;
-  color:var(--gold-lt);
-  letter-spacing:1.5px;
-  margin-bottom:3px;
-  opacity:0.9;
-}
-/* [수정] 상단 글자 확대에 맞춰 '내면의 지도' 크기도 균형있게 조정 */
-.logo-main{
-  font-family:var(--serif-kr);
-  font-weight:900;
-  font-size:17px;
-  color:var(--ink);
-  letter-spacing:-.2px;
-  line-height:1;
-}
-
+.logo-top{font-family:var(--sans-kr);font-weight:300;font-size:9px;color:var(--ink3);letter-spacing:2.5px;margin-bottom:1px;opacity:.7}
+.logo-main{font-family:var(--serif-kr);font-weight:900;font-size:15px;color:var(--ink);letter-spacing:-.2px;line-height:1}
 .nav-right{display:flex;align-items:center;gap:32px}
 .nav-link{font-family:var(--serif-kr);font-weight:300;font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .3s;opacity:.7}
 .nav-link:hover,.nav-link.active{color:var(--gold);opacity:1}
@@ -96,7 +77,21 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
 .hero-logo svg{width:90px;height:90px}
 
 .hero-label{font-family:var(--serif-en);font-size:10px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;position:relative;z-index:2;opacity:0;animation:fadeUp 1s .5s forwards}
-.hero-institute{font-family:var(--sans-kr);font-weight:300;font-size:12px;color:var(--ink3);letter-spacing:3px;margin-bottom:6px;position:relative;z-index:2;opacity:0;animation:fadeUp 1s .65s forwards;opacity:.7}
+
+/* [중앙 수정] 중앙의 '심리상담연구소' 글자 크기 확대 및 은은한 골드 브라운 톤 변경 */
+.hero-institute{
+  font-family:var(--sans-kr);
+  font-weight:400;             /* 두께를 살짝 주어 선명하게 */
+  font-size:15px;              /* 기존 12px에서 15px로 확대 */
+  color:var(--gold);           /* 어둡고 흐릿한 색에서 고급스러운 골드 컬러로 변경 */
+  letter-spacing:4px;          /* 커진 크기에 맞게 자간 확장 */
+  margin-bottom:10px;          /* 하단 메인 타이틀과의 간격 조정 */
+  position:relative;
+  z-index:2;
+  opacity:0;
+  animation:fadeUp 1s .65s forwards;
+}
+
 .hero-title{font-family:var(--serif-kr);font-weight:900;font-size:clamp(52px,8vw,88px);color:var(--ink);letter-spacing:-4px;line-height:.95;margin-bottom:16px;position:relative;z-index:2;opacity:0;animation:fadeUp 1s .8s forwards}
 .hero-en{font-family:var(--serif-en);font-style:italic;font-weight:300;font-size:clamp(15px,2vw,20px);color:var(--gold);letter-spacing:7px;margin-bottom:32px;position:relative;z-index:2;opacity:0;animation:fadeUp 1s .95s forwards}
 .hero-desc{font-family:var(--serif-kr);font-weight:300;font-size:15px;color:var(--ink3);line-height:2.2;max-width:440px;margin-bottom:52px;position:relative;z-index:2;opacity:0;animation:fadeUp 1s 1.1s forwards;opacity:.75}
@@ -158,9 +153,9 @@ footer{background:var(--ink);padding:60px 0 40px;text-align:center}
   .pillars-right{grid-template-columns:1fr 1fr 1fr}
 }
 
-/* [추가] 6월 특별 프로그램 배너 전용 고급화 스타일 명세 */
+/* 6월 특별 프로그램 배너 전용 스타일 명세 */
 .special-banner {
-  margin: 100px auto 0;
+  margin: 120px auto 0;
   max-width: 1040px;
   padding: 60px 40px;
   background: linear-gradient(135deg, var(--ink), var(--ink2));
