@@ -332,10 +332,10 @@
     </div>
 
     <script>
-        // 초기 슬라이드 데이터 데이터 구조
+        // 초기 슬라이드 데이터 - 부트캠프 단어를 완전히 제거하고 상담심리 연구소 기본 텍스트로 교체
         let slides = [
             { text: "우리는 우리 자신에 대해\n얼마나 알고 있을까요?\n\n내면의 그림자를 마주하는 순간\n진정한 치유가 시작됩니다." },
-            { text: "무의식의 숲을 거닐며\n빛바랜 기억의 조각들을\n하나씩 맞추어 나갑니다.\n\n- 내면의 지도 (Inner Map) -" }
+            { text: "무의식의 숲을 거닐며\n빛바랜 기억의 조각들을\n하나씩 맞추어 나갑니다.\n\n- 상담심리 연구소 내면의 지도 (Inner Map) -" }
         ];
         
         let currentIdx = 0;
@@ -416,7 +416,7 @@
             renderCurrentSlide();
         }
 
-        // 캔버스에 그리기 심상 처리
+        // 캔버스에 그리기 처리
         function renderCurrentSlide() {
             if(!slides[currentIdx]) return;
 
