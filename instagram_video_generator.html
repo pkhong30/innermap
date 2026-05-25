@@ -226,7 +226,6 @@
             line-height: 1.5;
         }
     </style>
-    <!-- 영상/이미지 캡처를 위한 라이브러리 로드 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
@@ -284,14 +283,14 @@
             </div>
 
             <div class="form-group">
-                <label>배경 음악 추가 (선택사항, .mp3)</label>
-                <input type="file" id="bg-music" accept="audio/*" style="font-size: 0.85rem;">
+                <label>배경 음악 추가 (.mp3 / 오디오 자동 연동)</label>
+                <input type="file" id="bg-music" accept="audio/*" onchange="loadAudio(this)" style="font-size: 0.85rem;">
+                <!-- 숨겨진 오디오 플레이어 엘리먼트 -->
+                <audio id="audio-player" loop></audio>
             </div>
 
             <div class="section-title" style="margin-top: 30px;">2. 내면의 문장 편집 (슬라이드 내용)</div>
-            <div id="slides-container">
-                <!-- 자바스크립트로 슬라이드 아이템이 생성됩니다. -->
-            </div>
+            <div id="slides-container"></div>
             
             <div class="slide-buttons">
                 <button type="button" class="btn-secondary" onclick="addSlide()">+ 슬라이드 추가</button>
@@ -303,7 +302,6 @@
             <div class="section-title" style="width: 100%; max-width: 400px; text-align: center;">실시간 미리보기 심해(深海)</div>
             
             <div id="canvas-container" class="ratio-9-16">
-                <!-- 실제 렌더링을 담당할 HTML5 Canvas -->
                 <canvas id="preview-canvas" width="1080" height="1920"></canvas>
             </div>
 
@@ -332,7 +330,6 @@
     </div>
 
     <script>
-        // 초기 슬라이드 데이터 - 부트캠프 단어를 완전히 제거하고 상담심리 연구소 기본 텍스트로 교체
         let slides = [
             { text: "우리는 우리 자신에 대해\n얼마나 알고 있을까요?\n\n내면의 그림자를 마주하는 순간\n진정한 치유가 시작됩니다." },
             { text: "무의식의 숲을 거닐며\n빛바랜 기억의 조각들을\n하나씩 맞추어 나갑니다.\n\n- 상담심리 연구소 내면의 지도 (Inner Map) -" }
@@ -345,12 +342,23 @@
 
         const canvas = document.getElementById('preview-canvas');
         const ctx = canvas.getContext('2d');
+        const audioPlayer = document.getElementById('audio-player');
 
-        // 초기화
         window.onload = function() {
             initSlides();
             renderCurrentSlide();
         };
+
+        // 오디오 파일 로드 처리
+        function loadAudio(input) {
+            const file = input.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                audioPlayer.src = url;
+                audioPlayer.load();
+                alert("음악 파일이 정상적으로 연동되었습니다. [자동 재생] 시 음악이 함께 흐릅니다.");
+            }
+        }
 
         function initSlides() {
             const container = document.getElementById('slides-container');
@@ -416,7 +424,6 @@
             renderCurrentSlide();
         }
 
-        // 캔버스에 그리기 처리
         function renderCurrentSlide() {
             if(!slides[currentIdx]) return;
 
@@ -425,16 +432,14 @@
             const fontSize = parseInt(document.getElementById('font-size').value) || 55;
             const text = slides[currentIdx].text;
 
-            // 1. 배경 채우기
             if (bgStyle === 'charcoal') {
                 ctx.fillStyle = '#2c2c2c';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#f5f2eb'; // 텍스트 컬러 반전
+                ctx.fillStyle = '#f5f2eb';
             } else if (bgStyle === 'grid') {
                 ctx.fillStyle = '#fcf9f2';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
-                // 원고지 격자 선 그리기
                 ctx.strokeStyle = 'rgba(186, 141, 141, 0.25)';
                 ctx.lineWidth = 2;
                 const gridSize = 90;
@@ -445,17 +450,15 @@
                     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
                 }
                 ctx.fillStyle = '#2c2c2c';
-            } else { // hanji 한지 느낌 기본
+            } else {
                 ctx.fillStyle = '#fcf9f2';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                // 외곽 은은한 테두리 선
                 ctx.strokeStyle = '#e6dcd0';
                 ctx.lineWidth = 20;
                 ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
                 ctx.fillStyle = '#2c2c2c';
             }
 
-            // 2. 텍스트 설정 및 줄바꿈 처리
             ctx.font = `normal ${fontSize}px ${fontFamily}`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
@@ -464,7 +467,6 @@
             const lineHeight = fontSize * 1.6;
             const totalHeight = lines.length * lineHeight;
             
-            // 정중앙 시작점 계산
             let startY = (canvas.height / 2) - (totalHeight / 2) + (lineHeight / 2);
 
             lines.forEach((line) => {
@@ -475,7 +477,6 @@
             updateTimeline();
         }
 
-        // 재생 컨트롤러 관련
         function updateTimeline() {
             document.getElementById('timeline-info').innerText = `${currentIdx + 1} / ${slides.length}`;
         }
@@ -491,7 +492,7 @@
             if(currentIdx < slides.length - 1) {
                 currentIdx++;
             } else {
-                currentIdx = 0; // 루프
+                currentIdx = 0;
             }
             renderCurrentSlide();
         }
@@ -502,18 +503,19 @@
 
             if(isPlaying) {
                 clearInterval(playInterval);
+                if (audioPlayer.src) audioPlayer.pause(); // 음악 정지
                 btn.innerText = "자동 재생";
                 isPlaying = false;
             } else {
                 btn.innerText = "일시 정지";
                 isPlaying = true;
+                if (audioPlayer.src) audioPlayer.play().catch(e => console.log("오디오 락 해제 필요")); // 음악 재생
                 playInterval = setInterval(() => {
                     nextSlide();
                 }, duration);
             }
         }
 
-        // 이미지 추출 기능
         function exportCurrentImage() {
             const dataUrl = canvas.toDataURL('image/png');
             const link = document.createElement('a');
@@ -522,13 +524,33 @@
             link.click();
         }
 
-        // 미디어레코더 비디오 추출 (Canvas Stream)
+        // 비디오 인코딩 스트림에 오디오 스트림 믹싱 병합
         function exportVideo() {
-            alert("동영상 인코딩 및 추출을 시작합니다. 전체 슬라이드가 1회 순회할 때까지 브라우저 창을 유지해 주세요.");
+            alert("동영상 인코딩 및 오디오 믹싱 추출을 시작합니다. 슬라이드가 완전히 돌 때까지 기다려주세요.");
             
             const duration = parseInt(document.getElementById('slide-duration').value);
-            const stream = canvas.captureStream(30); // 30 FPS
-            const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+            
+            // 1. 비디오 스트림 캡처
+            const canvasStream = canvas.captureStream(30); 
+            const outputTracks = [];
+
+            // 2. 오디오가 탑재되어 있다면 오디오 트랙을 비디오 스트림에 결합
+            if (audioPlayer.src && !audioPlayer.paused || audioPlayer.readyState >= 2) {
+                try {
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    const source = audioCtx.createMediaElementSource(audioPlayer);
+                    const dest = audioCtx.createMediaStreamDestination();
+                    source.connect(dest);
+                    source.connect(audioCtx.destination); // 모니터링용 연결
+                    
+                    const audioTrack = dest.stream.getAudioTracks()[0];
+                    if(audioTrack) canvasStream.addTrack(audioTrack);
+                } catch(e) {
+                    console.error("오디오 트랙 합성에 실패했습니다. 기본 무음 비디오로 인코딩합니다.", e);
+                }
+            }
+
+            const mediaRecorder = new MediaRecorder(canvasStream, { mimeType: 'video/webm;codecs=vp9,opus' });
             const chunks = [];
 
             mediaRecorder.ondataavailable = function(e) {
@@ -543,15 +565,19 @@
                 a.download = 'inner-map-contents.webm';
                 a.click();
                 
-                // 원상 복귀
                 clearInterval(videoInterval);
                 currentIdx = 0;
                 renderCurrentSlide();
+                if (audioPlayer.src) audioPlayer.pause();
             };
 
-            // 녹화 프로세스 시뮬레이션
+            // 녹화 시작
             currentIdx = 0;
             renderCurrentSlide();
+            if (audioPlayer.src) {
+                audioPlayer.currentTime = 0;
+                audioPlayer.play().catch(e => console.log(e));
+            }
             mediaRecorder.start();
 
             let slideCounter = 0;
