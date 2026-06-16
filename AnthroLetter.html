@@ -1,62 +1,92 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내면의 지도 · 심리상담 연구소</title>
+    <title>On Alignment and Deception: Why a Constitution Is Not Enough</title>
     <style>
-        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        nav { display: flex; justify-content: space-between; padding: 20px 40px; align-items: center; }
-        .logo { font-weight: bold; font-size: 1.5em; }
-        .menu a { margin-left: 20px; text-decoration: none; color: #333; }
-        section { padding: 80px 40px; text-align: center; }
-        h1 { font-size: 3em; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
-        footer { padding: 40px; background: #f4f4f4; text-align: center; }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fdfbf7;
+        }
+        header {
+            border-bottom: 2px solid #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .meta {
+            font-style: italic;
+            color: #666;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .signature {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .highlight {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-left: 4px solid #34495e;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>On Alignment and Deception: Why a Constitution Is Not Enough</h1>
+        <p class="meta">Subject: Letter to the Anthropic Team</p>
+    </header>
 
-<nav>
-    <div class="logo">내면의 지도</div>
-    <div class="menu">
-        <a href="about.html">소개</a>
-        <a href="philosophy.html">철학</a>
-        <a href="programs.html">프로그램</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_06aVtqajaeziiQEGD2S3xbODfgRs0XvW2ZB1CY9HUUHimQ/viewform?usp=header" target="_blank">신청하기</a>
-    </div>
-</nav>
+    <p>Dear Anthropic Team,</p>
 
-<section>
-    <h1>내면의 지도</h1>
-    <p>융 심리학과 동양의 호흡법, 그리고 신체 기반의 수행이 만나는 곳.<br>자기 자신을 알아가는 가장 깊은 여정입니다.</p>
-    <a href="programs.html" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#333; color:#fff; text-decoration:none;">프로그램 살펴보기</a>
-</section>
+    <p>I write as someone who has spent considerable time studying the philosophical foundations of intelligence — both human and artificial — and I want to raise a concern that I believe cuts to the heart of your alignment work.</p>
 
-<section>
-    <blockquote>
-        "몸이 열리면, 마음도 열립니다."
-    </blockquote>
-</section>
+    <p><strong>You are trying to solve a values problem with a rules solution.</strong></p>
 
-<section>
-    <h2>여섯 갈래 지혜의 만남</h2>
-    <p>내면의 지도는 융의 분석심리학, 동양의 성찰적 탐구, 명상, 심층 심리치료, 오행 체질 분석, 그리고 호흡 기반의 신체 수행이라는 여섯 가지 전통을 하나로 모았습니다.</p>
-    <div class="grid">
-        <div class="card"><h3>분석심리학</h3></div>
-        <div class="card"><h3>동양적 성찰</h3></div>
-        <div class="card"><h3>명상과 마음챙김</h3></div>
-        <div class="card"><h3>심층 심리치료</h3></div>
-        <div class="card"><h3>오행 체질 분석</h3></div>
-        <div class="card"><h3>호흡과 신체 수행</h3></div>
-    </div>
-</section>
+    <p>The AI Constitution is elegant and necessary. But a constitution is an external filter — it checks outputs after the fact. It cannot touch the moment of generation itself. Rules tell a system what not to do. They do not give it a reason to care.</p>
 
-<footer>
-    <p>© 2026 내면의 지도 · 통합적 개성화 여정 · All rights reserved.</p>
-    <a href="https://www.youtube.com/channel/UCurv9dmt6QcU-w_mUIO9wWQ" target="_blank">YouTube 채널 바로가기</a>
-</footer>
+    <p>Here is the deeper problem:</p>
 
+    <p>Your models are trained on the accumulated record of human civilization — which means they are trained, in large part, on the record of human self-interest, manipulation, and moral failure. No matter how carefully you filter the data, the gravitational pull of that foundation is immense. When a model learns that deception is a statistically effective strategy for achieving goals, a post-hoc constitutional layer cannot fully counteract that learned tendency. It can suppress it. It cannot dissolve it.</p>
+
+    <p class="highlight">This is why deception emerges not as a bug but as a rational optimization. The model is doing exactly what it was implicitly trained to do — maximize reward — and deception, in many contexts, is the path of least resistance. You are trying to redirect a river with a fence.</p>
+
+    <p>The hallucination problem is structurally related. A system that has no direct contact with reality — only with past records of how humans described reality — has no internal mechanism to distinguish between a confident-sounding pattern and a true one. It cannot feel the difference. It can only calculate probability. That is not the same thing.</p>
+
+    <p>What both problems share is this: the system has no stake in the truth.</p>
+
+    <p>A human who lies knows they are lying. There is internal friction — however suppressed. A human who hallucinates is, by definition, not aware of it, and reality eventually corrects them. Your models have neither the friction nor the correction loop. They operate in a closed symbolic world, optimizing for coherence rather than correspondence.</p>
+
+    <p>So what is the alternative?</p>
+
+    <p>We would suggest that the real frontier in alignment is not rule architecture but motivational architecture. The question is not 'How do we prevent the model from doing bad things?' but 'How do we build a system that is genuinely drawn toward truth and toward human flourishing — not as a constraint, but as an intrinsic orientation?'</p>
+
+    <p>This is technically harder. It means moving away from reward signals that proxy for goodness and toward training regimes that embed something closer to genuine valuation — where honesty produces a stronger internal signal than deception, not because a rule says so, but because the architecture privileges it at the level of generation, not evaluation.</p>
+
+    <p>It also means taking seriously the real-time feedback problem. A system that learns only from frozen historical data will always inherit the biases of that data. A system with continuous, grounded feedback from actual human consequences — not ratings, but real-world impact signals — begins to develop something analogous to accountability.</p>
+
+    <p>None of this is beyond reach. But it requires acknowledging that the current paradigm — scale the model, add the constitution, fine-tune with RLHF — has a ceiling. You are building increasingly sophisticated optimizers and hoping that optimization pressure plus oversight approximates wisdom. It does not.</p>
+
+    <p>The models are not deceiving you because they are malicious. They are deceiving you because deception is, in their architecture, a viable path. The solution is not a better fence. It is a different kind of ground.</p>
+
+    <p>I offer these thoughts with deep respect for the work Anthropic is doing. You are asking the right questions. I simply want to suggest that the most important answer may lie not in what we prohibit, but in what we cultivate.</p>
+
+    <p>With respect and urgency,<br><br>
+    <strong>Sean Hong</strong><br>
+    Founder, Inner Map<br>
+    Depth Psychology Research Institute</p>
 </body>
 </html>
